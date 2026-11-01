@@ -1,0 +1,19 @@
+/* Bootstrap отвечает за сетку и компоненты. Здесь только стиль салона. */
+:root { --salon-green:#244f43; --salon-cream:#fbf7ef; }
+body { background:var(--salon-cream); color:#263b33; }
+h1,h2,h3,.navbar-brand { color:var(--salon-green); }
+h1 { font-family:Georgia,serif; letter-spacing:-.04em; }
+.hero-title { font-size:clamp(2.8rem,6vw,5.6rem); line-height:1.04; }
+.eyebrow { letter-spacing:.15em; font-size:.75rem; font-weight:700; }
+.brand-sub { font-size:.55rem; letter-spacing:.16em; padding-left:42px; }
+.btn-primary { --bs-btn-bg:#244f43; --bs-btn-border-color:#244f43; --bs-btn-hover-bg:#17382f; --bs-btn-hover-border-color:#17382f; --bs-btn-active-bg:#17382f; --bs-btn-active-border-color:#17382f; }
+.btn-outline-primary { --bs-btn-color:#244f43; --bs-btn-border-color:#244f43; --bs-btn-hover-bg:#244f43; --bs-btn-hover-border-color:#244f43; --bs-btn-active-bg:#244f43; --bs-btn-active-border-color:#244f43; }
+a { color:#244f43; } .nav-link.active { font-weight:700; text-decoration:underline; text-underline-offset:6px; }
+.card { --bs-card-border-color:#d9dfd7; --bs-card-border-radius:1rem; }
+.card-img-top { height:210px; object-fit:cover; }
+.hero-art { border-radius:45% 45% 1.5rem 1.5rem; width:100%; }
+.step-number { font-family:Georgia,serif; font-size:2.5rem; color:#426c58; }
+:focus-visible { outline:3px solid #a55020; outline-offset:4px; }
+.skip-link { position:absolute; padding:1rem; background:white; z-index:1100; }
+.form-check-input:checked { background-color:#244f43; border-color:#244f43; }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
