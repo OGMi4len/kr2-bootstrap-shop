@@ -69,7 +69,8 @@ if (form) {
       }
     }
     if ([...time.options].some(option => option.value === previous)) time.value = previous;
-    if (time.options.length === 1) time.options[0].textContent = 'Нет времени: выберите другую дату';
+    if (!item || !date.value) time.options[0].textContent = 'Сначала выберите услугу и дату';
+    else if (time.options.length === 1) time.options[0].textContent = 'Нет времени: выберите другую дату';
     text('estimate', item ? `Предварительно: ${item.price} · ${item.minutes} мин` : 'Выберите услугу для расчёта предварительной цены.');
   }
   function validateText() {
