@@ -1,18 +1,285 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись."><title>Запись — ХвостКом</title><link rel="icon" href="images/paw.svg" type="image/svg+xml"><link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="css/custom.css"></head>
-<body><a class="visually-hidden-focusable skip-link" href="#main">Перейти к содержимому</a>
-<header class="border-bottom bg-white"><nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация"><div class="container"><a class="navbar-brand fw-bold" href="index.html"><img src="images/paw.svg" width="36" height="36" alt=""> ХвостКом<span class="d-block small fw-normal brand-sub">ГРУМИНГ И ЗАБОТА</span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3"><li class="nav-item"><a class="nav-link "  href="index.html">Главная</a></li><li class="nav-item"><a class="nav-link "  href="catalog.html">Услуги</a></li><li class="nav-item"><a class="nav-link "  href="gallery.html">До и после</a></li><li class="nav-item"><a class="nav-link "  href="contacts.html">О салоне</a></li><li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Запись</a></li></ul></div></div></nav></header>
-<main id="main" class="container my-5"><div class="row g-5"><section class="col-12 col-lg-4"><p class="eyebrow">ПЛАНИРУЕМ ВИЗИТ</p><h1 class="display-4">Время для заботы</h1><p class="lead">Расскажите о питомце и выберите удобное время.</p><ol class="ps-3 text-body-secondary"><li class="mb-3">Выберите услугу.</li><li class="mb-3">Укажите дату и время.</li><li>Проверьте учебную заявку.</li></ol><div class="alert alert-info" role="alert">Демонстрационная форма. Заявка не отправляется и место не бронируется. Достаточно вымышленных данных.</div></section><section class="col-12 col-lg-8"><div class="card"><div class="card-header py-3"><h2 class="h4 mb-0">Записать питомца</h2></div><div class="card-body p-4"><p class="small">* — обязательные поля. Учебное расписание: ежедневно, 10:00–19:00.</p><noscript><div class="alert alert-warning" role="alert">Включите JavaScript для проверки учебной заявки.</div></noscript><form id="bookingForm" novalidate><div class="row g-3">
-<div class="col-12 col-md-6"><label for="name" class="form-label">Ваше имя *</label><input id="name" name="name" class="form-control" required maxlength="80" autocomplete="given-name"><div class="invalid-feedback">Введите имя.</div></div>
-<div class="col-12 col-md-6"><label for="email" class="form-label">E-mail *</label><input id="email" name="email" type="email" class="form-control" required autocomplete="email"><div class="invalid-feedback">Введите корректный e-mail.</div></div>
-<div class="col-12 col-md-6"><label for="phone" class="form-label">Телефон *</label><div class="input-group has-validation"><span class="input-group-text">+7</span><input id="phone" name="phone" type="tel" class="form-control" inputmode="tel" required pattern="[0-9 ()-]{10,18}" placeholder="900 000-00-00" aria-describedby="phoneHelp"><div class="invalid-feedback">Укажите 10 цифр без +7.</div></div><div id="phoneHelp" class="form-text">10 цифр, можно с пробелами и скобками.</div></div>
-<div class="col-12 col-md-6"><label for="petName" class="form-label">Кличка питомца *</label><input id="petName" name="petName" class="form-control" required maxlength="60"><div class="invalid-feedback">Введите кличку.</div></div>
-<div class="col-12 col-md-6"><label for="petType" class="form-label">Питомец *</label><select id="petType" name="petType" class="form-select" required><option value="">Выберите питомца</option><option value="dog">Собака</option><option value="cat">Кошка</option></select><div class="invalid-feedback">Выберите питомца. Стрижка доступна для собак.</div></div>
-<div class="col-12 col-md-6"><label for="service" class="form-label">Услуга *</label><select id="service" name="service" class="form-select" required><option value="">Выберите услугу</option><option value="groom">Стрижка и уход — от 2 400 ₽</option><option value="bath">Купание и вычёс — от 1 600 ₽</option><option value="ears">Гигиенический уход — от 700 ₽</option></select><div class="invalid-feedback">Выберите услугу.</div></div>
-<div class="col-12 col-md-6"><label for="date" class="form-label">Дата *</label><input id="date" name="date" type="date" class="form-control" required><div class="invalid-feedback">Выберите дату от сегодня до 90 дней вперёд.</div></div>
-<div class="col-12 col-md-6"><label for="time" class="form-label">Время начала *</label><select id="time" name="time" class="form-select" required><option value="">Сначала выберите услугу и дату</option></select><div class="invalid-feedback">Выберите доступное учебное время.</div></div>
-<div class="col-12"><label for="comment" class="form-label">Особенности питомца</label><textarea id="comment" name="comment" class="form-control" rows="3" maxlength="500" placeholder="Например: боится фена"></textarea></div>
-<div class="col-12"><div class="form-check"><input id="agree" name="agree" type="checkbox" class="form-check-input" required><label for="agree" class="form-check-label">Согласен на обработку данных учебной формы *</label><div class="invalid-feedback">Подтвердите согласие.</div></div></div>
-<div class="col-12"><p id="estimate" class="fw-bold mb-2" aria-live="polite">Выберите услугу для расчёта предварительной цены.</p></div><div class="col-12 d-flex flex-wrap gap-2"><button type="submit" class="btn btn-primary" disabled id="submitBooking">Проверить заявку</button><button type="reset" class="btn btn-outline-secondary">Очистить</button></div></div></form><section id="bookingResult" class="alert alert-success mt-4 d-none" aria-live="polite" tabindex="-1"><h3 class="h5">Учебная заявка проверена</h3><p id="bookingSummary"></p><p class="mb-0">Ничего не отправлено. Настоящая запись требует сервера и подтверждения салона.</p></section></div></div></section></div></main>
-<footer class="container-fluid border-top py-4 mt-5"><div class="container d-flex flex-column flex-md-row justify-content-between gap-3"><div><a class="fw-bold text-decoration-none" href="index.html">ХвостКом</a><p class="small text-body-secondary mb-0">Забота начинается с мягких лап.</p></div><p class="small text-body-secondary mb-0">Учебный проект · КР №2<br>Цены и расписание демонстрационные. Заявки не отправляются.</p></div></footer>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="js/app.js"></script></body></html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись.">
+    <title>
+      Запись — ХвостКом
+    </title>
+    <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+  </head>
+  <body>
+    <a class="visually-hidden-focusable skip-link" href="#main">
+      Перейти к содержимому
+    </a>
+    <header class="border-bottom bg-white">
+      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="index.html">
+            <img src="images/paw.svg" width="36" height="36" alt="">
+            ХвостКом
+            <span class="d-block small fw-normal brand-sub">
+              ГРУМИНГ И ЗАБОТА
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
+            <span class="navbar-toggler-icon">
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+              <li class="nav-item">
+                <a class="nav-link "  href="index.html">
+                  Главная
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="catalog.html">
+                  Услуги
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="gallery.html">
+                  До и после
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link "  href="contacts.html">
+                  О салоне
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="order.html">
+                  Запись
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="main" class="container my-5">
+      <div class="row gx-4 gy-5">
+        <section class="col-12 col-lg-4">
+          <p class="eyebrow">
+            ПЛАНИРУЕМ ВИЗИТ
+          </p>
+          <h1 class="display-4">
+            Время для заботы
+          </h1>
+          <p class="lead">
+            Расскажите о питомце и выберите удобное время.
+          </p>
+          <ol class="ps-3 text-body-secondary">
+            <li class="mb-3">
+              Выберите услугу.
+            </li>
+            <li class="mb-3">
+              Укажите дату и время.
+            </li>
+            <li>
+              Проверьте учебную заявку.
+            </li>
+          </ol>
+          <div class="alert alert-info" role="alert">
+            Демонстрационная форма. Заявка не отправляется и место не бронируется. Достаточно вымышленных данных.
+          </div>
+        </section>
+        <section class="col-12 col-lg-8">
+          <div class="card">
+            <div class="card-header py-3">
+              <h2 class="h4 mb-0">
+                Записать питомца
+              </h2>
+            </div>
+            <div class="card-body p-4">
+              <p class="small">
+                * — обязательные поля. Учебное расписание: ежедневно, 10:00–19:00.
+              </p>
+              <noscript>
+                <div class="alert alert-warning" role="alert">
+                  Включите JavaScript для проверки учебной заявки.
+                </div>
+              </noscript>
+              <form id="bookingForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label for="name" class="form-label">
+                      Ваше имя *
+                    </label>
+                    <input id="name" name="name" class="form-control" required maxlength="80" autocomplete="given-name">
+                    <div class="invalid-feedback">
+                      Введите имя.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="email" class="form-label">
+                      E-mail *
+                    </label>
+                    <input id="email" name="email" type="email" class="form-control" required autocomplete="email">
+                    <div class="invalid-feedback">
+                      Введите корректный e-mail.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="phone" class="form-label">
+                      Телефон *
+                    </label>
+                    <div class="input-group has-validation">
+                      <span class="input-group-text">
+                        +7
+                      </span>
+                      <input id="phone" name="phone" type="tel" class="form-control" inputmode="tel" required pattern="[0-9 ()-]{10,18}" placeholder="900 000-00-00" aria-describedby="phoneHelp">
+                      <div class="invalid-feedback">
+                        Укажите 10 цифр без +7.
+                      </div>
+                    </div>
+                    <div id="phoneHelp" class="form-text">
+                      10 цифр, можно с пробелами и скобками.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="petName" class="form-label">
+                      Кличка питомца *
+                    </label>
+                    <input id="petName" name="petName" class="form-control" required maxlength="60">
+                    <div class="invalid-feedback">
+                      Введите кличку.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="petType" class="form-label">
+                      Питомец *
+                    </label>
+                    <select id="petType" name="petType" class="form-select" required>
+                      <option value="">
+                        Выберите питомца
+                      </option>
+                      <option value="dog">
+                        Собака
+                      </option>
+                      <option value="cat">
+                        Кошка
+                      </option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Выберите питомца. Стрижка доступна для собак.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="service" class="form-label">
+                      Услуга *
+                    </label>
+                    <select id="service" name="service" class="form-select" required>
+                      <option value="">
+                        Выберите услугу
+                      </option>
+                      <option value="groom">
+                        Стрижка и уход — от 2 400 ₽
+                      </option>
+                      <option value="bath">
+                        Купание и вычёс — от 1 600 ₽
+                      </option>
+                      <option value="ears">
+                        Гигиенический уход — от 700 ₽
+                      </option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Выберите услугу.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="date" class="form-label">
+                      Дата *
+                    </label>
+                    <input id="date" name="date" type="date" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Выберите дату от сегодня до 90 дней вперёд.
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="time" class="form-label">
+                      Время начала *
+                    </label>
+                    <select id="time" name="time" class="form-select" required>
+                      <option value="">
+                        Сначала выберите услугу и дату
+                      </option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Выберите доступное учебное время.
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="comment" class="form-label">
+                      Особенности питомца
+                    </label>
+                    <textarea id="comment" name="comment" class="form-control" rows="3" maxlength="500" placeholder="Например: боится фена"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input id="agree" name="agree" type="checkbox" class="form-check-input" required>
+                      <label for="agree" class="form-check-label">
+                        Согласен на обработку данных учебной формы *
+                      </label>
+                      <div class="invalid-feedback">
+                        Подтвердите согласие.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <p id="estimate" class="fw-bold mb-2" aria-live="polite">
+                      Выберите услугу для расчёта предварительной цены.
+                    </p>
+                  </div>
+                  <div class="col-12 d-flex flex-wrap gap-2">
+                    <button type="submit" class="btn btn-primary" disabled id="submitBooking">
+                      Проверить заявку
+                    </button>
+                    <button type="reset" class="btn btn-outline-secondary">
+                      Очистить
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <section id="bookingResult" class="alert alert-success mt-4 d-none" aria-live="polite" tabindex="-1">
+                <h3 class="h5">
+                  Учебная заявка проверена
+                </h3>
+                <p id="bookingSummary">
+                </p>
+                <p class="mb-0">
+                  Ничего не отправлено. Настоящая запись требует сервера и подтверждения салона.
+                </p>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="container-fluid border-top py-4 mt-5">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
+        <div>
+          <a class="fw-bold text-decoration-none" href="index.html">
+            ХвостКом
+          </a>
+          <p class="small text-body-secondary mb-0">
+            Забота начинается с мягких лап.
+          </p>
+        </div>
+        <p class="small text-body-secondary mb-0">
+          Учебный проект · КР №2
+          <br>
+          Цены и расписание демонстрационные. Заявки не отправляются.
+        </p>
+      </div>
+    </footer>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/app.js">
+    </script>
+  </body>
+</html>

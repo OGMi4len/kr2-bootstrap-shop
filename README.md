@@ -77,3 +77,9 @@ kr2-bootstrap-shop/
 В СДО сдаётся **ссылка на итоговый GitHub-репозиторий**, а не только архив и не отдельные практические. GitHub Pages необязателен; если опубликуете, добавьте реальную проверенную ссылку сюда.
 
 Практика №11 также ставит задачу КР №3. Она выполняется отдельно на основе КР №1 и в этот репозиторий не включена.
+
+## Репозиторий
+
+https://github.com/OGMi4len/kr2-bootstrap-shop
+
+Этап №9: [PR №1](https://github.com/OGMi4len/kr2-bootstrap-shop/pull/1). Этап №10: [PR №2](https://github.com/OGMi4len/kr2-bootstrap-shop/pull/2). Финальный PR находится во вкладке Pull requests; ветка `fix/kr2-final-check`.
