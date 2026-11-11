@@ -1,104 +1,138 @@
-/* Обычный JS без сборки. Bootstrap управляет navbar, modal и accordion. */
-'use strict';
-const services = {
-  groom: { title: 'Стрижка и уход', price: 'от 2 400 ₽', minutes: 90, pet: 'Для собак', image: 'dog', description: 'Аккуратная стрижка, купание и сушка. Подбираем форму с учётом шерсти.', steps: 'Знакомство, купание, сушка, стрижка' },
-  bath: { title: 'Купание и вычёс', price: 'от 1 600 ₽', minutes: 60, pet: 'Для собак и кошек', image: 'cat', description: 'Мягкое очищение, сушка и удаление выпавшей шерсти.', steps: 'Знакомство, купание, сушка, вычёсывание' },
-  ears: { title: 'Гигиенический уход', price: 'от 700 ₽', minutes: 30, pet: 'Для собак и кошек', image: 'dog', description: 'Уход за ушами и когтями без лишнего стресса.', steps: 'Знакомство, осмотр, уход за ушами и когтями' }
-};
-const requested = new URLSearchParams(location.search).get('service');
-const selected = Object.hasOwn(services, requested) ? requested : 'groom';
-const text = (id, value) => { const node = document.getElementById(id); if (node) node.textContent = value; };
+/* Основной сценарий: каталог → услуга → учебная запись. Без сборки и сервера. */
+(() => {
+  'use strict';
+  const services = window.HV_SERVICES;
+  const english = document.documentElement.lang === 'en';
+  const say = (ru, en) => english ? en : ru;
+  const locale = english ? 'en-GB' : 'ru-RU';
+  const byId = id => document.getElementById(id);
+  const setText = (id, value) => { if (byId(id)) byId(id).textContent = value; };
+  const formatPrice = item => say('от ', 'from ') + item.price.toLocaleString(locale) + ' ₽';
+  const petLabel = item => item.pets.length === 2 ? say('Собаки и кошки', 'Dogs & cats') : say('Для собак', 'Dogs only');
+  const parameters = new URLSearchParams(location.search);
+  const requested = parameters.get('service');
+  const selected = Object.hasOwn(services, requested) ? requested : 'groom';
+  const asset = english ? '../' : '';
 
-// Фильтр оставляет кошкам только подходящие услуги.
-const filter = document.getElementById('petFilter');
-if (filter) filter.addEventListener('change', () => {
-  let count = 0;
-  document.querySelectorAll('.service-item').forEach(card => {
-    card.hidden = filter.value === 'cat' && card.dataset.pet === 'dog';
-    if (!card.hidden) count++;
+  // Переключение языка сохраняет выбранную услугу и якорь текущего раздела.
+  const languageLink = byId('languageSwitch');
+  if (languageLink) languageLink.href += location.search + location.hash;
+
+  const filter = byId('petFilter');
+  if (filter) {
+    function filterCards() {
+      let count = 0;
+      document.querySelectorAll('.service-item').forEach(card => {
+        const item = services[card.dataset.serviceKey];
+        card.hidden = filter.value !== 'all' && !item.pets.includes(filter.value);
+        if (!card.hidden) count++;
+      });
+      setText('filterCount', say('Найдено услуг: ', 'Services found: ') + count);
+    }
+    if (['dog', 'cat'].includes(parameters.get('pet'))) filter.value = parameters.get('pet');
+    filter.addEventListener('change', filterCards);
+    filterCards();
+  }
+
+  const modal = byId('serviceModal');
+  if (modal) modal.addEventListener('show.bs.modal', event => {
+    const id = event.relatedTarget?.dataset.service;
+    if (!Object.hasOwn(services, id)) return;
+    const item = services[id];
+    setText('modalService', `${item.title} · ${formatPrice(item)} · ${item.minutes} ${say('мин', 'min')}`);
+    byId('modalOrder').href = `order.html?service=${id}`;
   });
-  text('filterCount', `Найдено услуг: ${count}`);
-});
 
-const modal = document.getElementById('serviceModal');
-if (modal) modal.addEventListener('show.bs.modal', event => {
-  const id = event.relatedTarget?.dataset.service;
-  if (!Object.hasOwn(services, id)) return;
-  text('modalService', `${services[id].title} · ${services[id].price} · ${services[id].minutes} мин`);
-  document.getElementById('modalOrder').href = `order.html?service=${id}`;
-});
+  if (byId('serviceTitle')) {
+    const item = services[selected];
+    setText('serviceTitle', item.title);
+    setText('serviceDescription', item.description);
+    setText('servicePrice', formatPrice(item));
+    setText('serviceBadge', petLabel(item));
+    setText('serviceDuration', item.minutes + say(' минут', ' minutes'));
+    setText('serviceSteps', item.steps);
+    setText('servicePet', petLabel(item));
+    byId('serviceImage').src = `${asset}images/${item.image}.svg`;
+    byId('serviceImage').alt = say('Учебная иллюстрация для услуги: ', 'Example illustration for: ') + item.title;
+    byId('serviceOrder').href = `order.html?service=${selected}`;
+    document.title = `${item.title} — ${say('ХвостКом', 'HvostKom')}`;
+  }
 
-if (document.getElementById('serviceTitle')) {
-  const item = services[selected];
-  text('serviceTitle', item.title); text('serviceDescription', item.description);
-  text('servicePrice', item.price); text('serviceBadge', item.pet);
-  text('serviceDuration', `${item.minutes} минут`); text('serviceSteps', item.steps); text('servicePet', item.pet);
-  const image = document.getElementById('serviceImage');
-  image.src = `images/${item.image}.svg`;
-  image.alt = `Учебная иллюстрация питомца для услуги «${item.title}»`;
-  document.getElementById('serviceOrder').href = `order.html?service=${selected}`;
-  document.title = `${item.title} — ХвостКом`;
-}
-
-const form = document.getElementById('bookingForm');
-if (form) {
-  const field = id => document.getElementById(id);
-  const localDate = date => `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
-  const service = field('service'), date = field('date'), time = field('time'), pet = field('petType');
-  field('submitBooking').disabled = false;
+  const form = byId('bookingForm');
+  if (!form) return;
+  const service = byId('service');
+  const date = byId('date');
+  const time = byId('time');
+  const pet = byId('petType');
+  const localDate = day => `${day.getFullYear()}-${String(day.getMonth() + 1).padStart(2, '0')}-${String(day.getDate()).padStart(2, '0')}`;
+  const hideResult = () => byId('bookingResult').classList.add('d-none');
+  byId('submitBooking').disabled = false;
   if (Object.hasOwn(services, requested)) {
     service.value = requested;
-    if (requested === 'groom') pet.value = 'dog';
+    if (!services[requested].pets.includes('cat')) pet.value = 'dog';
   }
-  const hideResult = () => field('bookingResult').classList.add('d-none');
-  function sync() {
-    const now = new Date(), limit = new Date(now);
-    limit.setDate(limit.getDate()+90);
-    date.min = localDate(now); date.max = localDate(limit);
+
+  function syncBooking() {
+    const now = new Date();
+    const limit = new Date(now);
+    limit.setDate(limit.getDate() + 90);
+    date.min = localDate(now);
+    date.max = localDate(limit);
     const item = services[service.value];
-    pet.setCustomValidity(pet.value === 'cat' && service.value === 'groom' ? 'Стрижка доступна для собак.' : '');
-    date.setCustomValidity(date.value && (date.value < date.min || date.value > date.max) ? 'Дата вне учебного расписания.' : '');
-    const previous = time.value;
-    time.replaceChildren(new Option('Выберите время', ''));
-    if (item && date.value && !date.validationMessage) {
-      // Начало раз в полчаса; процедура должна закончиться до 19:00.
-      for (let minute=600; minute+item.minutes<=1140; minute+=30) {
-        const value = `${String(Math.floor(minute/60)).padStart(2,'0')}:${String(minute%60).padStart(2,'0')}`;
-        if (date.value === localDate(now) && minute <= now.getHours()*60+now.getMinutes()) continue;
-        time.add(new Option(value, value));
+    pet.setCustomValidity(item && pet.value && !item.pets.includes(pet.value)
+      ? say('Выберите услугу для этого питомца.', 'Choose a service suitable for this pet.') : '');
+    date.setCustomValidity(date.value && (date.value < date.min || date.value > date.max)
+      ? say('Дата вне учебного расписания.', 'The date is outside the example schedule.') : '');
+    const previousTime = time.value;
+    time.replaceChildren(new Option(say('Выберите время', 'Choose a time'), ''));
+    if (item && date.value && date.validity.valid) {
+      // Начала раз в полчаса, окончание не позднее 19:00.
+      for (let minute = 600; minute + item.minutes <= 1140; minute += 30) {
+        if (date.value === localDate(now) && minute <= now.getHours() * 60 + now.getMinutes()) continue;
+        const label = `${String(Math.floor(minute / 60)).padStart(2, '0')}:${String(minute % 60).padStart(2, '0')}`;
+        time.add(new Option(label, label));
       }
     }
-    if ([...time.options].some(option => option.value === previous)) time.value = previous;
-    if (!item || !date.value) time.options[0].textContent = 'Сначала выберите услугу и дату';
-    else if (time.options.length === 1) time.options[0].textContent = 'Нет времени: выберите другую дату';
-    text('estimate', item ? `Предварительно: ${item.price} · ${item.minutes} мин` : 'Выберите услугу для расчёта предварительной цены.');
+    if ([...time.options].some(option => option.value === previousTime)) time.value = previousTime;
+    if (!item || !date.value) time.options[0].textContent = say('Сначала выберите услугу и дату', 'Choose a service and date first');
+    else if (time.options.length === 1) time.options[0].textContent = say('Нет времени: выберите другую дату', 'No times: choose another date');
+    setText('estimate', item
+      ? `${say('Предварительно: ', 'Estimate: ')}${formatPrice(item)} · ${item.minutes} ${say('мин', 'min')}`
+      : say('Выберите услугу для расчёта цены.', 'Choose a service for an estimate.'));
   }
+
   function validateText() {
-    ['name','petName'].forEach(id => field(id).setCustomValidity(field(id).value.trim() ? '' : 'Введите текст.'));
-    const digits = field('phone').value.replace(/\D/g,'');
-    field('phone').setCustomValidity(digits.length === 10 ? '' : 'Нужно 10 цифр без +7.');
+    ['name', 'petName'].forEach(id => byId(id).setCustomValidity(byId(id).value.trim() ? '' : say('Введите текст.', 'Enter a name.')));
+    const digits = byId('phone').value.replace(/\D/g, '');
+    const allowedPhone = /^[0-9 ()-]+$/.test(byId('phone').value);
+    byId('phone').setCustomValidity(digits.length === 10 && allowedPhone ? '' : say('Нужно 10 цифр без +7, без букв.', 'Enter 10 digits without +7 or letters.'));
   }
-  [service,date,pet].forEach(node => node.addEventListener('change', sync));
+
+  [service, date, pet].forEach(field => field.addEventListener('change', syncBooking));
   form.addEventListener('input', () => { hideResult(); validateText(); });
   form.addEventListener('change', hideResult);
   form.addEventListener('submit', event => {
     event.preventDefault();
-    sync(); validateText(); form.classList.add('was-validated');
+    hideResult();
+    syncBooking();
+    validateText();
+    form.classList.add('was-validated');
     if (!form.checkValidity()) {
       form.querySelector(':invalid')?.focus();
       return;
     }
     const item = services[service.value];
-    const dateLabel = new Date(`${date.value}T12:00:00`).toLocaleDateString('ru-RU');
-    // textContent безопасно выводит введённые данные как текст.
-    text('bookingSummary', `${field('name').value.trim()}, питомец ${field('petName').value.trim()}: ${item.title}, ${dateLabel} в ${time.value}. Предварительно ${item.price}.`);
-    field('bookingResult').classList.remove('d-none');
-    field('bookingResult').focus();
+    const dateLabel = new Date(`${date.value}T12:00:00`).toLocaleDateString(locale);
+    // Пользовательский ввод выводится текстом, а не HTML.
+    setText('bookingSummary', `${byId('name').value.trim()}, ${byId('petName').value.trim()}: ${item.title}, ${dateLabel}, ${time.value}. ${formatPrice(item)}.`);
+    byId('bookingResult').classList.remove('d-none');
+    byId('bookingResult').focus();
   });
   form.addEventListener('reset', () => {
-    form.classList.remove('was-validated'); hideResult();
-    form.querySelectorAll('input,select').forEach(node => node.setCustomValidity(''));
-    setTimeout(sync, 0); // reset сначала возвращает исходные значения полей.
+    form.classList.remove('was-validated');
+    hideResult();
+    form.querySelectorAll('input, select').forEach(field => field.setCustomValidity(''));
+    setTimeout(syncBooking, 0);
   });
-  sync();
-}
+  syncBooking();
+})();

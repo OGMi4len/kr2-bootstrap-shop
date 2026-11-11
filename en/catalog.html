@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HvostKom — a student pet grooming website. Services for dogs and cats, care guide and demo booking.">
+    <meta name="theme-color" content="#fbf7ef">
+    <title>Service catalogue — HvostKom</title><link rel="icon" href="../images/paw.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="ru" href="../catalog.html">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/custom.css">
+  </head>
+  <body id="top">
+    <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
+    <nav class="navbar navbar-expand-xl sticky-top site-nav" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="HvostKom — home"><img src="../images/paw.svg" width="32" height="32" alt=""><span class="wordmark wordmark-small">HvostKom<span class="brand-dot">.</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Open menu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center">
+            <li class="nav-item">
+              <a class="nav-link "  href="index.html#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="catalog.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="guide.html">Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="comparison.html">Compare</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="changelog.html">Updates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="order.html">Booking</a>
+            </li>
+          </ul>
+          <div class="search-box my-3 my-xl-0 ms-xl-3">
+            <label class="visually-hidden" for="siteSearch">
+              Search the site
+            </label>
+            <input id="siteSearch" class="form-control form-control-sm" type="search" placeholder="Search…" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+            <ul id="searchResults" class="search-results" hidden aria-label="Search results">
+            </ul>
+            <span id="searchStatus" class="visually-hidden" role="status"></span>
+          </div>
+          <a class="nav-link language-link ms-xl-3 py-2" id="languageSwitch" href="../catalog.html" lang="ru" hreflang="ru" aria-label="Русская версия">RU</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" class="container py-5">
+      <header class="page-heading">
+        <p class="kicker">
+          CARE FOR EVERY COMPANION
+        </p>
+        <h1>
+          Care catalogue
+        </h1>
+        <p class="lead text-body-secondary mb-0">
+          Choose your pet, then compare care steps and duration.
+        </p>
+      </header>
+      <div class="filter-panel row g-3 align-items-end mb-4">
+        <div class="col-sm-6 col-lg-4">
+          <label for="petFilter" class="form-label">
+            Who is the care for?
+          </label>
+          <select id="petFilter" class="form-select">
+            <option value="all">
+              All pets
+            </option>
+            <option value="dog">
+              Dogs
+            </option>
+            <option value="cat">
+              Cats
+            </option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <p id="filterCount" class="mb-2 text-body-secondary" aria-live="polite">
+            Services found: 6
+          </p>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        <div class="col service-item" data-pet="dog" data-service-key="groom">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="../images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Dogs only</span>
+              </div>
+              <h3 class="h5 service-name">
+                Grooming & haircut
+              </h3>
+              <p class="text-body-secondary">
+                A bath, drying and a haircut suited to your dog’s coat.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">from 2 400 ₽</span><span class="text-body-secondary small">90 min</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=groom">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="groom">Choose →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="both" data-service-key="bath">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="../images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Dogs & cats</span>
+              </div>
+              <h3 class="h5 service-name">
+                Bath & brush
+              </h3>
+              <p class="text-body-secondary">
+                Gentle cleansing, drying and brushing out loose hair.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">from 1 600 ₽</span><span class="text-body-secondary small">60 min</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=bath">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="bath">Choose →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="both" data-service-key="ears">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="../images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Dogs & cats</span>
+              </div>
+              <h3 class="h5 service-name">
+                Hygiene care
+              </h3>
+              <p class="text-body-secondary">
+                Basic ear and nail care in one short visit.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">from 700 ₽</span><span class="text-body-secondary small">30 min</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=ears">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="ears">Choose →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="both" data-service-key="nails">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="../images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Dogs & cats</span>
+              </div>
+              <h3 class="h5 service-name">
+                Nail trim
+              </h3>
+              <p class="text-body-secondary">
+                A separate short appointment for tidy paws.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">from 400 ₽</span><span class="text-body-secondary small">15 min</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=nails">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="nails">Choose →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="both" data-service-key="deshed">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="../images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Dogs & cats</span>
+              </div>
+              <h3 class="h5 service-name">
+                De-shedding
+              </h3>
+              <p class="text-body-secondary">
+                A bath and thorough undercoat brushing without a haircut.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">from 2 100 ₽</span><span class="text-body-secondary small">75 min</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=deshed">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="deshed">Choose →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="dog" data-service-key="puppy">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="../images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Dogs only</span>
+              </div>
+              <h3 class="h5 service-name">
+                First visit
+              </h3>
+              <p class="text-body-secondary">
+                A calm introduction to the salon, tools and groomer.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">from 1 000 ₽</span><span class="text-body-secondary small">30 min</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=puppy">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="puppy">Choose →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="alert alert-info mt-4">
+        The description determines suitable pets, not the illustration. Four services are available for cats; haircut and first visit are for dogs.
+      </div>
+      <a href="comparison.html" class="btn btn-outline-primary">Compare all services →</a>
+    </main>
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="modalTitle">
+              Your choice
+            </h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="modalService">
+            </p>
+            <p class="small text-body-secondary">
+              The price is an estimate. You can review a demo booking on the next step.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Back</button><a id="modalOrder" href="order.html" class="btn btn-primary">Continue</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="site-footer container-fluid pt-5 pb-4">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+          <div class="col">
+            <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">HvostKom<span class="brand-dot">.</span></span></a>
+            <p class="small text-body-secondary mt-3">
+              Grooming and care for dogs and cats. We start with an introduction and choose a suitable service.
+            </p>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Explore
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="catalog.html">Service catalogue</a>
+              </li>
+              <li>
+                <a href="guide.html">Owner’s guide</a>
+              </li>
+              <li>
+                <a href="gallery.html">Before & after</a>
+              </li>
+              <li>
+                <a href="contacts.html">About the salon</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Project
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="https://github.com/OGMi4len/kr2-bootstrap-shop">Source on GitHub ↗</a>
+              </li>
+              <li>
+                <a href="changelog.html">Change history</a>
+              </li>
+              <li>
+                <a href="comparison.html">Prices & duration</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-line mb-0">
+          © 2026 HVOSTKOM /// STUDENT PROJECT · COURSEWORK 2<br><span class="text-body-secondary">Prices and time slots are examples. No booking is sent.</span>
+        </p>
+      </div>
+    </footer>
+    <a class="to-top" href="#top" aria-label="Back to top" title="Back to top">↑</a><script src="../vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="../js/services.js">
+    </script>
+    <script src="../js/app.js">
+    </script>
+    <script src="../js/enhancements.js">
+    </script>
+  </body>
+</html>

@@ -1,123 +1,156 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись.">
-    <title>
-      До и после — ХвостКом
-    </title>
-    <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <meta name="description" content="ХвостКом — учебный сайт груминг-салона. Услуги для собак и кошек, памятка и демонстрационная запись.">
+    <meta name="theme-color" content="#fbf7ef">
+    <title>До и после — ХвостКом</title><link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="en/gallery.html">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main">
-      Перейти к содержимому
-    </a>
-    <header class="border-bottom bg-white">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html">
-            <img src="images/paw.svg" width="36" height="36" alt="">
-            ХвостКом
-            <span class="d-block small fw-normal brand-sub">
-              ГРУМИНГ И ЗАБОТА
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
-            <span class="navbar-toggler-icon">
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link "  href="index.html">
-                  Главная
-                </a>
+  <body id="top">
+    <a class="visually-hidden-focusable skip-link" href="#main">Перейти к содержимому</a>
+    <nav class="navbar navbar-expand-xl sticky-top site-nav" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="ХвостКом — главная"><img src="images/paw.svg" width="32" height="32" alt=""><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html#about">О салоне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="catalog.html">Услуги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="guide.html">Памятка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="comparison.html">Сравнение</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="changelog.html">Изменения</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="order.html">Запись</a>
+            </li>
+          </ul>
+          <div class="search-box my-3 my-xl-0 ms-xl-3">
+            <label class="visually-hidden" for="siteSearch">
+              Поиск по сайту
+            </label>
+            <input id="siteSearch" class="form-control form-control-sm" type="search" placeholder="Поиск…" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+            <ul id="searchResults" class="search-results" hidden aria-label="Результаты поиска">
+            </ul>
+            <span id="searchStatus" class="visually-hidden" role="status"></span>
+          </div>
+          <a class="nav-link language-link ms-xl-3 py-2" id="languageSwitch" href="en/gallery.html" lang="en" hreflang="en" aria-label="English version">EN</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" class="container py-5">
+      <header class="page-heading">
+        <p class="kicker">
+          ГАЛЕРЕЯ УХОДА
+        </p>
+        <h1>
+          До и после
+        </h1>
+        <p class="lead text-body-secondary mb-0">
+          Иллюстрация того, как меняется образ питомца после ухода.
+        </p>
+      </header>
+      <div class="alert alert-info">
+        Это авторские учебные иллюстрации, а не фотографии выполненных работ.
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <figure class="card h-100">
+            <img src="images/before.svg" width="530" height="430" class="img-fluid" alt="Иллюстрация собаки до ухода">
+            <figcaption class="card-body">
+              <h2 class="h4">
+                До ухода
+              </h2>
+              <p class="text-body-secondary mb-0">
+                Пример образа до стрижки и вычёсывания.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <figure class="card h-100">
+            <img src="images/dog.svg" width="530" height="430" class="img-fluid" alt="Иллюстрация собаки после ухода">
+            <figcaption class="card-body">
+              <h2 class="h4">
+                После ухода
+              </h2>
+              <p class="text-body-secondary mb-0">
+                Аккуратный силуэт в учебной иллюстрации.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <a href="catalog.html" class="btn btn-primary mt-4">Выбрать уход →</a>
+    </main>
+    <footer class="site-footer container-fluid pt-5 pb-4">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+          <div class="col">
+            <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a>
+            <p class="small text-body-secondary mt-3">
+              Груминг и забота о собаках и кошках. Начинаем со знакомства, подбираем уход под питомца.
+            </p>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Разделы
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="catalog.html">Каталог услуг</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="catalog.html">
-                  Услуги
-                </a>
+              <li>
+                <a href="guide.html">Памятка владельцу</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="gallery.html">
-                  До и после
-                </a>
+              <li>
+                <a href="gallery.html">До и после</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="contacts.html">
-                  О салоне
-                </a>
+              <li>
+                <a href="contacts.html">О салоне</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="order.html">
-                  Запись
-                </a>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Проект
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="https://github.com/OGMi4len/kr2-bootstrap-shop">Исходный код на GitHub ↗</a>
+              </li>
+              <li>
+                <a href="changelog.html">История изменений</a>
+              </li>
+              <li>
+                <a href="comparison.html">Цены и длительность</a>
               </li>
             </ul>
           </div>
         </div>
-      </nav>
-    </header>
-    <main id="main" class="container my-5">
-      <p class="eyebrow">
-        КАК МЕНЯЕТСЯ ОБРАЗ
-      </p>
-      <h1 class="display-4">
-        До и после ухода
-      </h1>
-      <p class="lead">
-        Демонстрация страницы портфолио груминга.
-      </p>
-      <div class="alert alert-info" role="alert">
-        Это авторские учебные иллюстрации, а не фотографии работ салона. Перед реальной публикацией замените их согласованной парой фотографий одного питомца.
-      </div>
-      <div class="row g-4">
-        <figure class="col-12 col-md-6">
-          <img class="img-fluid rounded-4" src="images/before.svg" width="530" height="430" alt="Учебная иллюстрация собаки с длинной пушистой шерстью до ухода">
-          <figcaption class="mt-3">
-            <span class="badge text-bg-secondary">
-              До
-            </span>
-            Пушистая шерсть перед стрижкой
-          </figcaption>
-        </figure>
-        <figure class="col-12 col-md-6">
-          <img class="img-fluid rounded-4" src="images/dog.svg" width="530" height="430" alt="Учебная иллюстрация той же собаки с аккуратной шерстью и бантом после ухода">
-          <figcaption class="mt-3">
-            <span class="badge text-bg-success">
-              После
-            </span>
-            Аккуратный силуэт после ухода
-          </figcaption>
-        </figure>
-      </div>
-      <a class="btn btn-primary mt-3" href="order.html?service=groom">
-        Выбрать такой уход
-      </a>
-    </main>
-    <footer class="container-fluid border-top py-4 mt-5">
-      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-          <a class="fw-bold text-decoration-none" href="index.html">
-            ХвостКом
-          </a>
-          <p class="small text-body-secondary mb-0">
-            Забота начинается с мягких лап.
-          </p>
-        </div>
-        <p class="small text-body-secondary mb-0">
-          Учебный проект · КР №2
-          <br>
-          Цены и расписание демонстрационные. Заявки не отправляются.
+        <p class="footer-line mb-0">
+          © 2026 ХВОСТКОМ /// УЧЕБНЫЙ ПРОЕКТ · КР №2<br><span class="text-body-secondary">Цены и расписание демонстрационные. Заявки не отправляются.</span>
         </p>
       </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">↑</a><script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/services.js">
     </script>
     <script src="js/app.js">
+    </script>
+    <script src="js/enhancements.js">
     </script>
   </body>
 </html>

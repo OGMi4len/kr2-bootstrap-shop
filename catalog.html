@@ -1,254 +1,301 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись.">
-    <title>
-      Услуги — ХвостКом
-    </title>
-    <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <meta name="description" content="ХвостКом — учебный сайт груминг-салона. Услуги для собак и кошек, памятка и демонстрационная запись.">
+    <meta name="theme-color" content="#fbf7ef">
+    <title>Каталог услуг — ХвостКом</title><link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="en/catalog.html">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main">
-      Перейти к содержимому
-    </a>
-    <header class="border-bottom bg-white">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html">
-            <img src="images/paw.svg" width="36" height="36" alt="">
-            ХвостКом
-            <span class="d-block small fw-normal brand-sub">
-              ГРУМИНГ И ЗАБОТА
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
-            <span class="navbar-toggler-icon">
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link "  href="index.html">
-                  Главная
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="catalog.html">
-                  Услуги
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="gallery.html">
-                  До и после
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="contacts.html">
-                  О салоне
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="order.html">
-                  Запись
-                </a>
-              </li>
+  <body id="top">
+    <a class="visually-hidden-focusable skip-link" href="#main">Перейти к содержимому</a>
+    <nav class="navbar navbar-expand-xl sticky-top site-nav" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="ХвостКом — главная"><img src="images/paw.svg" width="32" height="32" alt=""><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center">
+            <li class="nav-item">
+              <a class="nav-link "  href="index.html#about">О салоне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="catalog.html">Услуги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="guide.html">Памятка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="comparison.html">Сравнение</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="changelog.html">Изменения</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="order.html">Запись</a>
+            </li>
+          </ul>
+          <div class="search-box my-3 my-xl-0 ms-xl-3">
+            <label class="visually-hidden" for="siteSearch">
+              Поиск по сайту
+            </label>
+            <input id="siteSearch" class="form-control form-control-sm" type="search" placeholder="Поиск…" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+            <ul id="searchResults" class="search-results" hidden aria-label="Результаты поиска">
             </ul>
+            <span id="searchStatus" class="visually-hidden" role="status"></span>
           </div>
+          <a class="nav-link language-link ms-xl-3 py-2" id="languageSwitch" href="en/catalog.html" lang="en" hreflang="en" aria-label="English version">EN</a>
         </div>
-      </nav>
-    </header>
-    <main id="main" class="container my-5">
-      <p class="eyebrow">
-        УХОД БЕЗ ЛИШНИХ СЛОЖНОСТЕЙ
-      </p>
-      <h1 class="display-4 mb-3">
-        Услуги и цены
-      </h1>
-      <p class="lead mb-4">
-        Выберите уход для своего питомца. Все цены — учебные примеры.
-      </p>
-      <div class="alert alert-info" role="alert">
-        Это предварительные цены. Объём ухода зависит от размера и состояния шерсти.
       </div>
-      <div class="row g-3 align-items-end mb-4">
-        <div class="col-12 col-md-5">
+    </nav>
+    <main id="main" class="container py-5">
+      <header class="page-heading">
+        <p class="kicker">
+          УХОД ДЛЯ КАЖДОГО ПИТОМЦА
+        </p>
+        <h1>
+          Каталог ухода
+        </h1>
+        <p class="lead text-body-secondary mb-0">
+          Сначала выберите питомца, затем сравните состав и длительность.
+        </p>
+      </header>
+      <div class="filter-panel row g-3 align-items-end mb-4">
+        <div class="col-sm-6 col-lg-4">
           <label for="petFilter" class="form-label">
-            Кому нужен уход?
+            Для кого выбираем уход?
           </label>
-          <select class="form-select" id="petFilter">
+          <select id="petFilter" class="form-select">
             <option value="all">
               Все питомцы
             </option>
             <option value="dog">
-              Собака
+              Собаки
             </option>
             <option value="cat">
-              Кошка
+              Кошки
             </option>
           </select>
         </div>
-        <div class="col-12 col-md-7">
-          <p id="filterCount" class="mb-2" aria-live="polite">
-            Найдено услуг: 3
+        <div class="col-sm-6">
+          <p id="filterCount" class="mb-2 text-body-secondary" aria-live="polite">
+            Найдено услуг: 6
           </p>
         </div>
       </div>
-      <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4 service-item" data-pet="dog">
-          <article class="card h-100">
-            <img src="images/dog.svg" class="card-img-top" alt="Иллюстрация собаки для услуги Стрижка и уход">
-            <div class="card-body d-flex flex-column p-4">
-              <div class="d-flex justify-content-between mb-3">
-                <span class="badge text-bg-light border">
-                  Для собак
-                </span>
-                <span class="small text-body-secondary">
-                  90 мин
-                </span>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        <div class="col service-item" data-pet="dog" data-service-key="groom">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Для собак</span>
               </div>
-              <h3 class="h4 card-title">
+              <h3 class="h5 service-name">
                 Стрижка и уход
               </h3>
-              <p class="card-text text-body-secondary">
-                Аккуратная стрижка, купание и сушка. Подбираем форму с учётом шерсти.
+              <p class="text-body-secondary">
+                Купание, сушка и аккуратная стрижка с учётом типа шерсти.
               </p>
-              <p class="fw-bold mt-auto">
-                от 2 400 ₽
-              </p>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-outline-primary" href="product.html?service=groom">
-                  Подробнее
-                </a>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="groom">
-                  Выбрать
-                </button>
+              <div class="service-meta">
+                <span class="service-card-price">от 2 400 ₽</span><span class="text-body-secondary small">90 мин</span>
               </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=groom">Подробнее ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="groom">Выбрать →</button>
             </div>
           </article>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 service-item" data-pet="all">
-          <article class="card h-100">
-            <img src="images/cat.svg" class="card-img-top" alt="Иллюстрация кота для услуги Купание и вычёс">
-            <div class="card-body d-flex flex-column p-4">
-              <div class="d-flex justify-content-between mb-3">
-                <span class="badge text-bg-light border">
-                  Для всех
-                </span>
-                <span class="small text-body-secondary">
-                  60 мин
-                </span>
+        <div class="col service-item" data-pet="both" data-service-key="bath">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Собаки и кошки</span>
               </div>
-              <h3 class="h4 card-title">
+              <h3 class="h5 service-name">
                 Купание и вычёс
               </h3>
-              <p class="card-text text-body-secondary">
-                Мягкое очищение, сушка и удаление выпавшей шерсти.
+              <p class="text-body-secondary">
+                Мягкое очищение, сушка и вычёсывание выпавшей шерсти.
               </p>
-              <p class="fw-bold mt-auto">
-                от 1 600 ₽
-              </p>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-outline-primary" href="product.html?service=bath">
-                  Подробнее
-                </a>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="bath">
-                  Выбрать
-                </button>
+              <div class="service-meta">
+                <span class="service-card-price">от 1 600 ₽</span><span class="text-body-secondary small">60 мин</span>
               </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=bath">Подробнее ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="bath">Выбрать →</button>
             </div>
           </article>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 service-item" data-pet="all">
-          <article class="card h-100">
-            <img src="images/dog.svg" class="card-img-top" alt="Иллюстрация собаки для услуги Гигиенический уход">
-            <div class="card-body d-flex flex-column p-4">
-              <div class="d-flex justify-content-between mb-3">
-                <span class="badge text-bg-light border">
-                  Для всех
-                </span>
-                <span class="small text-body-secondary">
-                  30 мин
-                </span>
+        <div class="col service-item" data-pet="both" data-service-key="ears">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Собаки и кошки</span>
               </div>
-              <h3 class="h4 card-title">
+              <h3 class="h5 service-name">
                 Гигиенический уход
               </h3>
-              <p class="card-text text-body-secondary">
-                Уход за ушами и когтями без лишнего стресса.
+              <p class="text-body-secondary">
+                Базовый уход за ушами и когтями в одном коротком визите.
               </p>
-              <p class="fw-bold mt-auto">
-                от 700 ₽
-              </p>
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-outline-primary" href="product.html?service=ears">
-                  Подробнее
-                </a>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="ears">
-                  Выбрать
-                </button>
+              <div class="service-meta">
+                <span class="service-card-price">от 700 ₽</span><span class="text-body-secondary small">30 мин</span>
               </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=ears">Подробнее ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="ears">Выбрать →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="both" data-service-key="nails">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Собаки и кошки</span>
+              </div>
+              <h3 class="h5 service-name">
+                Уход за когтями
+              </h3>
+              <p class="text-body-secondary">
+                Отдельная короткая процедура для ухоженных лап.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">от 400 ₽</span><span class="text-body-secondary small">15 мин</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=nails">Подробнее ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="nails">Выбрать →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="both" data-service-key="deshed">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Собаки и кошки</span>
+              </div>
+              <h3 class="h5 service-name">
+                Экспресс-линька
+              </h3>
+              <p class="text-body-secondary">
+                Купание и тщательный вычёс подшёрстка без изменения формы.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">от 2 100 ₽</span><span class="text-body-secondary small">75 мин</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=deshed">Подробнее ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="deshed">Выбрать →</button>
+            </div>
+          </article>
+        </div>
+        <div class="col service-item" data-pet="dog" data-service-key="puppy">
+          <article class="card service-card h-100">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between gap-2 mb-4">
+                <img src="images/paw.svg" class="service-icon" width="32" height="32" alt=""><span class="badge tag">Для собак</span>
+              </div>
+              <h3 class="h5 service-name">
+                Первое знакомство
+              </h3>
+              <p class="text-body-secondary">
+                Спокойное знакомство собаки с местом, инструментами и мастером.
+              </p>
+              <div class="service-meta">
+                <span class="service-card-price">от 1 000 ₽</span><span class="text-body-secondary small">30 мин</span>
+              </div>
+            </div>
+            <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
+              <a href="product.html?service=puppy">Подробнее ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="puppy">Выбрать →</button>
             </div>
           </article>
         </div>
       </div>
-      <noscript>
-        <p class="mt-3">
-          Для фильтра и окна выбора нужен JavaScript. Услуги доступны по ссылкам «Подробнее».
-        </p>
-      </noscript>
+      <div class="alert alert-info mt-4">
+        Вид питомца определяется описанием услуги, а не иллюстрацией. Для кошек доступны четыре процедуры; стрижка и знакомство — для собак.
+      </div>
+      <a href="comparison.html" class="btn btn-outline-primary">Сравнить все услуги →</a>
     </main>
-    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title fs-5" id="serviceModalTitle">
-              Выбранная услуга
+            <h2 class="modal-title fs-5" id="modalTitle">
+              Ваш выбор
             </h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть">
-            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
           </div>
           <div class="modal-body">
             <p id="modalService">
             </p>
-            <div class="alert alert-info" role="alert">
-              Цена предварительная. Итог зависит от размера питомца и состояния шерсти. На следующем шаге можно выбрать дату.
-            </div>
+            <p class="small text-body-secondary">
+              Стоимость предварительная. На следующем шаге можно проверить учебную заявку.
+            </p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-              Назад
-            </button>
-            <a id="modalOrder" href="order.html" class="btn btn-primary">
-              Перейти к записи
-            </a>
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Назад</button><a id="modalOrder" href="order.html" class="btn btn-primary">К записи</a>
           </div>
         </div>
       </div>
     </div>
-    <footer class="container-fluid border-top py-4 mt-5">
-      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-          <a class="fw-bold text-decoration-none" href="index.html">
-            ХвостКом
-          </a>
-          <p class="small text-body-secondary mb-0">
-            Забота начинается с мягких лап.
-          </p>
+    <footer class="site-footer container-fluid pt-5 pb-4">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+          <div class="col">
+            <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a>
+            <p class="small text-body-secondary mt-3">
+              Груминг и забота о собаках и кошках. Начинаем со знакомства, подбираем уход под питомца.
+            </p>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Разделы
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="catalog.html">Каталог услуг</a>
+              </li>
+              <li>
+                <a href="guide.html">Памятка владельцу</a>
+              </li>
+              <li>
+                <a href="gallery.html">До и после</a>
+              </li>
+              <li>
+                <a href="contacts.html">О салоне</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Проект
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="https://github.com/OGMi4len/kr2-bootstrap-shop">Исходный код на GitHub ↗</a>
+              </li>
+              <li>
+                <a href="changelog.html">История изменений</a>
+              </li>
+              <li>
+                <a href="comparison.html">Цены и длительность</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p class="small text-body-secondary mb-0">
-          Учебный проект · КР №2
-          <br>
-          Цены и расписание демонстрационные. Заявки не отправляются.
+        <p class="footer-line mb-0">
+          © 2026 ХВОСТКОМ /// УЧЕБНЫЙ ПРОЕКТ · КР №2<br><span class="text-body-secondary">Цены и расписание демонстрационные. Заявки не отправляются.</span>
         </p>
       </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">↑</a><script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/services.js">
     </script>
     <script src="js/app.js">
+    </script>
+    <script src="js/enhancements.js">
     </script>
   </body>
 </html>

@@ -1,114 +1,97 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись.">
-    <title>
-      Об услуге — ХвостКом
-    </title>
-    <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <meta name="description" content="ХвостКом — учебный сайт груминг-салона. Услуги для собак и кошек, памятка и демонстрационная запись.">
+    <meta name="theme-color" content="#fbf7ef">
+    <title>Об услуге — ХвостКом</title><link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="en/product.html">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main">
-      Перейти к содержимому
-    </a>
-    <header class="border-bottom bg-white">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html">
-            <img src="images/paw.svg" width="36" height="36" alt="">
-            ХвостКом
-            <span class="d-block small fw-normal brand-sub">
-              ГРУМИНГ И ЗАБОТА
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
-            <span class="navbar-toggler-icon">
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link "  href="index.html">
-                  Главная
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="catalog.html">
-                  Услуги
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="gallery.html">
-                  До и после
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="contacts.html">
-                  О салоне
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="order.html">
-                  Запись
-                </a>
-              </li>
+  <body id="top">
+    <a class="visually-hidden-focusable skip-link" href="#main">Перейти к содержимому</a>
+    <nav class="navbar navbar-expand-xl sticky-top site-nav" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="ХвостКом — главная"><img src="images/paw.svg" width="32" height="32" alt=""><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center">
+            <li class="nav-item">
+              <a class="nav-link "  href="index.html#about">О салоне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="catalog.html">Услуги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="guide.html">Памятка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="comparison.html">Сравнение</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="changelog.html">Изменения</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="order.html">Запись</a>
+            </li>
+          </ul>
+          <div class="search-box my-3 my-xl-0 ms-xl-3">
+            <label class="visually-hidden" for="siteSearch">
+              Поиск по сайту
+            </label>
+            <input id="siteSearch" class="form-control form-control-sm" type="search" placeholder="Поиск…" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+            <ul id="searchResults" class="search-results" hidden aria-label="Результаты поиска">
             </ul>
+            <span id="searchStatus" class="visually-hidden" role="status"></span>
           </div>
+          <a class="nav-link language-link ms-xl-3 py-2" id="languageSwitch" href="en/product.html" lang="en" hreflang="en" aria-label="English version">EN</a>
         </div>
-      </nav>
-    </header>
-    <main id="main" class="container my-5">
+      </div>
+    </nav>
+    <main id="main" class="container py-5">
       <nav aria-label="Хлебные крошки">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">
-              Главная
-            </a>
+            <a href="index.html">Главная</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="catalog.html">
-              Услуги
-            </a>
+            <a href="catalog.html">Услуги</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
             Об услуге
           </li>
         </ol>
       </nav>
-      <div class="row gx-4 gy-5 align-items-center">
-        <div class="col-12 col-lg-6">
-          <img id="serviceImage" src="images/dog.svg" class="img-fluid rounded-4" width="530" height="430" alt="Иллюстрация собаки">
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-5">
+          <img id="serviceImage" src="images/dog.svg" width="530" height="430" class="img-fluid service-illustration" alt="Учебная иллюстрация собаки">
         </div>
-        <section class="col-12 col-lg-6">
-          <span id="serviceBadge" class="badge text-bg-success mb-3">
-            Для собак
-          </span>
-          <h1 id="serviceTitle" class="display-4">
+        <section class="col-lg-7">
+          <p class="kicker">
+            ПОДРОБНЕЕ ОБ УХОДЕ
+          </p>
+          <span class="badge tag mb-3" id="serviceBadge">Для собак</span>
+          <h1 id="serviceTitle">
             Стрижка и уход
           </h1>
-          <p id="serviceDescription" class="lead">
-            Аккуратная стрижка, купание и сушка. Подбираем форму с учётом шерсти.
+          <p id="serviceDescription" class="lead text-body-secondary">
+            Купание, сушка и аккуратная стрижка с учётом типа шерсти.
           </p>
-          <p id="servicePrice" class="fs-3 fw-bold">
+          <p class="price-label" id="servicePrice">
             от 2 400 ₽
           </p>
-          <a id="serviceOrder" href="order.html?service=groom" class="btn btn-primary btn-lg">
-            Записать питомца
-          </a>
+          <a id="serviceOrder" href="order.html?service=groom" class="btn btn-primary">Записать питомца →</a>
         </section>
       </div>
-      <section class="my-5">
-        <h2 class="h3 mb-3">
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
           Что входит в уход
         </h2>
         <div class="table-responsive">
-          <table class="table table-striped table-bordered align-middle">
+          <table class="table table-bordered align-middle">
             <caption>
-              Демонстрационные параметры выбранной услуги
+              Предварительные параметры услуги
             </caption>
             <thead>
               <tr>
@@ -126,7 +109,7 @@
                   Этапы
                 </th>
                 <td id="serviceSteps">
-                  Знакомство, купание, сушка, стрижка
+                  Знакомство → купание → сушка → стрижка
                 </td>
               </tr>
               <tr>
@@ -142,80 +125,109 @@
                   Кому подходит
                 </th>
                 <td id="servicePet">
-                  Собакам
+                  Для собак
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="alert alert-warning" role="alert">
-          Груминг не заменяет ветеринарную помощь. При проблемах со здоровьем процедуру следует согласовать с ветеринаром.
-        </div>
       </section>
       <section>
-        <h2 class="h3 mb-3">
+        <h2 class="section-title mb-4">
           Перед визитом
         </h2>
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item">
             <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
-                Как подготовить питомца?
-              </button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq0" aria-controls="faq0" aria-expanded="false">Как подготовиться к визиту?</button>
+            </h3>
+            <div id="faq0" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Расскажите о привычках питомца и возьмите привычную переноску или поводок. Полный список — в памятке владельцу.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-controls="faq1" aria-expanded="false">Можно ли записать кошку?</button>
             </h3>
             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Перед визитом выгуляйте собаку. Сообщите об особенностях поведения и чувствительности к средствам.
+                Да. В каталоге есть четыре подходящие услуги: купание, гигиена, когти и экспресс-линька.
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                Можно ли записать кошку?
-              </button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-controls="faq2" aria-expanded="false">Форма подтверждает запись?</button>
             </h3>
             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Да, выберите купание и вычёс либо гигиенический уход. Стрижка в этом учебном каталоге предназначена для собак.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                Подтверждает ли форма реальную запись?
-              </button>
-            </h3>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Нет. Сайт учебный: форма проверяет данные и показывает итог. Данные никуда не отправляются.
+                Нет. Это учебный сайт: форма проверяет данные и показывает итог. Настоящая запись требует подтверждения салона.
               </div>
             </div>
           </div>
         </div>
+        <a class="btn btn-outline-primary mt-4" href="guide.html">Полная памятка ↗</a>
       </section>
     </main>
-    <footer class="container-fluid border-top py-4 mt-5">
-      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-          <a class="fw-bold text-decoration-none" href="index.html">
-            ХвостКом
-          </a>
-          <p class="small text-body-secondary mb-0">
-            Забота начинается с мягких лап.
-          </p>
+    <footer class="site-footer container-fluid pt-5 pb-4">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+          <div class="col">
+            <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a>
+            <p class="small text-body-secondary mt-3">
+              Груминг и забота о собаках и кошках. Начинаем со знакомства, подбираем уход под питомца.
+            </p>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Разделы
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="catalog.html">Каталог услуг</a>
+              </li>
+              <li>
+                <a href="guide.html">Памятка владельцу</a>
+              </li>
+              <li>
+                <a href="gallery.html">До и после</a>
+              </li>
+              <li>
+                <a href="contacts.html">О салоне</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Проект
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="https://github.com/OGMi4len/kr2-bootstrap-shop">Исходный код на GitHub ↗</a>
+              </li>
+              <li>
+                <a href="changelog.html">История изменений</a>
+              </li>
+              <li>
+                <a href="comparison.html">Цены и длительность</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p class="small text-body-secondary mb-0">
-          Учебный проект · КР №2
-          <br>
-          Цены и расписание демонстрационные. Заявки не отправляются.
+        <p class="footer-line mb-0">
+          © 2026 ХВОСТКОМ /// УЧЕБНЫЙ ПРОЕКТ · КР №2<br><span class="text-body-secondary">Цены и расписание демонстрационные. Заявки не отправляются.</span>
         </p>
       </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">↑</a><script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/services.js">
     </script>
     <script src="js/app.js">
+    </script>
+    <script src="js/enhancements.js">
     </script>
   </body>
 </html>

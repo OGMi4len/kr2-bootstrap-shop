@@ -1,139 +1,206 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись.">
-    <title>
-      О салоне — ХвостКом
-    </title>
-    <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <meta name="description" content="ХвостКом — учебный сайт груминг-салона. Услуги для собак и кошек, памятка и демонстрационная запись.">
+    <meta name="theme-color" content="#fbf7ef">
+    <title>О салоне — ХвостКом</title><link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="en/contacts.html">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main">
-      Перейти к содержимому
-    </a>
-    <header class="border-bottom bg-white">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html">
-            <img src="images/paw.svg" width="36" height="36" alt="">
-            ХвостКом
-            <span class="d-block small fw-normal brand-sub">
-              ГРУМИНГ И ЗАБОТА
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
-            <span class="navbar-toggler-icon">
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link "  href="index.html">
-                  Главная
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="catalog.html">
-                  Услуги
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="gallery.html">
-                  До и после
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="contacts.html">
-                  О салоне
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="order.html">
-                  Запись
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main id="main" class="container my-5">
-      <p class="eyebrow">
-        ЗНАКОМИМСЯ БЛИЖЕ
-      </p>
-      <h1 class="display-4 mb-4">
-        О ХвостКом
-      </h1>
-      <div class="row gx-4 gy-5">
-        <section class="col-12 col-lg-7">
-          <h2 class="h3">
-            Уход с вниманием к питомцу
-          </h2>
-          <p class="lead">
-            Концепция учебного салона — понятные услуги для собак и кошек и удобный путь к записи.
-          </p>
-          <p>
-            Перед процедурой мастер уточняет пожелания, знакомится с питомцем и обсуждает состав ухода. Если питомцу нужен перерыв, процедура приостанавливается.
-          </p>
-          <h2 class="h4 mt-4">
-            Что взять на визит
-          </h2>
-          <ul>
-            <li>
-              Поводок или переноску.
+  <body id="top">
+    <a class="visually-hidden-focusable skip-link" href="#main">Перейти к содержимому</a>
+    <nav class="navbar navbar-expand-xl sticky-top site-nav" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="ХвостКом — главная"><img src="images/paw.svg" width="32" height="32" alt=""><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html#about">О салоне</a>
             </li>
-            <li>
-              Информацию об особенностях питомца.
+            <li class="nav-item">
+              <a class="nav-link "  href="catalog.html">Услуги</a>
             </li>
-            <li>
-              Пример желаемой стрижки, если он есть.
+            <li class="nav-item">
+              <a class="nav-link "  href="guide.html">Памятка</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="comparison.html">Сравнение</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="changelog.html">Изменения</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link "  href="order.html">Запись</a>
             </li>
           </ul>
-          <a href="order.html" class="btn btn-primary">
-            Перейти к учебной записи
-          </a>
+          <div class="search-box my-3 my-xl-0 ms-xl-3">
+            <label class="visually-hidden" for="siteSearch">
+              Поиск по сайту
+            </label>
+            <input id="siteSearch" class="form-control form-control-sm" type="search" placeholder="Поиск…" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+            <ul id="searchResults" class="search-results" hidden aria-label="Результаты поиска">
+            </ul>
+            <span id="searchStatus" class="visually-hidden" role="status"></span>
+          </div>
+          <a class="nav-link language-link ms-xl-3 py-2" id="languageSwitch" href="en/contacts.html" lang="en" hreflang="en" aria-label="English version">EN</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" class="container py-5">
+      <header class="page-heading">
+        <p class="kicker">
+          О НАШЕМ ПОДХОДЕ
+        </p>
+        <h1>
+          Забота начинается со знакомства
+        </h1>
+        <p class="lead text-body-secondary mb-0">
+          Уход за питомцами с понятными этапами и вниманием к привычкам.
+        </p>
+      </header>
+      <div class="row g-4">
+        <section class="col-lg-7">
+          <h2 class="h3">
+            Наша концепция
+          </h2>
+          <p class="text-body-secondary">
+            ХвостКом — концепция груминг-салона для собак и кошек. На сайте можно изучить услуги, сравнить стоимость и длительность, подготовиться к визиту и проверить учебную заявку.
+          </p>
+          <div class="border-panel mt-4">
+            <h2 class="h4">
+              Пример режима работы
+            </h2>
+            <p class="mb-0">
+              Ежедневно, 10:00–19:00. Последнее начало зависит от длительности процедуры.
+            </p>
+          </div>
         </section>
-        <aside class="col-12 col-lg-5">
+        <aside class="col-lg-5">
           <div class="card">
             <div class="card-body p-4">
               <h2 class="h4">
-                Демонстрационный салон
+                Контакты и адрес
               </h2>
-              <p>
-                Учебное расписание: ежедневно с 10:00 до 19:00.
+              <p class="text-body-secondary">
+                Проект учебный. Адрес, телефон и почта действующего салона не предоставлены. Для демонстрации используйте каталог и форму без отправки.
               </p>
-              <p class="mb-0">
-                Реальные адрес, телефон и карта не указаны: проект не представляет действующую организацию.
-              </p>
+              <a href="order.html" class="btn btn-primary">Открыть учебную запись</a>
             </div>
           </div>
         </aside>
       </div>
-    </main>
-    <footer class="container-fluid border-top py-4 mt-5">
-      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-          <a class="fw-bold text-decoration-none" href="index.html">
-            ХвостКом
-          </a>
-          <p class="small text-body-secondary mb-0">
-            Забота начинается с мягких лап.
+      <section class="mt-5">
+        <h2 class="h3 mb-4">
+          Понятный путь к визиту
+        </h2>
+        <div id="visitDemo" class="process-panel">
+          <ol class="process-steps">
+            <li data-visit-step>
+              <span class="step-number">01</span>
+              <h3 class="h6">
+                Знакомство
+              </h3>
+              <p class="small text-body-secondary mb-0">
+                Рассказываем о привычках питомца.
+              </p>
+            </li>
+            <li data-visit-step>
+              <span class="step-number">02</span>
+              <h3 class="h6">
+                Подбор ухода
+              </h3>
+              <p class="small text-body-secondary mb-0">
+                Согласовываем состав и длительность.
+              </p>
+            </li>
+            <li data-visit-step>
+              <span class="step-number">03</span>
+              <h3 class="h6">
+                Процедура
+              </h3>
+              <p class="small text-body-secondary mb-0">
+                Выполняем согласованные этапы.
+              </p>
+            </li>
+            <li data-visit-step>
+              <span class="step-number">04</span>
+              <h3 class="h6">
+                Рекомендации
+              </h3>
+              <p class="small text-body-secondary mb-0">
+                Обсуждаем дальнейший домашний уход.
+              </p>
+            </li>
+          </ol>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <button id="demoPlay" class="btn btn-primary" type="button">Старт</button><button id="demoNext" class="btn btn-outline-primary" type="button">Следующий этап</button><button id="demoReset" class="btn btn-outline-primary" type="button">Сброс</button>
+          </div>
+          <p id="visitStatus" class="small mt-3 mb-0" role="status">
+            Нажмите «Старт» или пройдите этапы вручную.
           </p>
         </div>
-        <p class="small text-body-secondary mb-0">
-          Учебный проект · КР №2
-          <br>
-          Цены и расписание демонстрационные. Заявки не отправляются.
+      </section>
+    </main>
+    <footer class="site-footer container-fluid pt-5 pb-4">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+          <div class="col">
+            <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a>
+            <p class="small text-body-secondary mt-3">
+              Груминг и забота о собаках и кошках. Начинаем со знакомства, подбираем уход под питомца.
+            </p>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Разделы
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="catalog.html">Каталог услуг</a>
+              </li>
+              <li>
+                <a href="guide.html">Памятка владельцу</a>
+              </li>
+              <li>
+                <a href="gallery.html">До и после</a>
+              </li>
+              <li>
+                <a href="contacts.html">О салоне</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2 class="footer-title">
+              Проект
+            </h2>
+            <ul class="list-unstyled footer-links">
+              <li>
+                <a href="https://github.com/OGMi4len/kr2-bootstrap-shop">Исходный код на GitHub ↗</a>
+              </li>
+              <li>
+                <a href="changelog.html">История изменений</a>
+              </li>
+              <li>
+                <a href="comparison.html">Цены и длительность</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-line mb-0">
+          © 2026 ХВОСТКОМ /// УЧЕБНЫЙ ПРОЕКТ · КР №2<br><span class="text-body-secondary">Цены и расписание демонстрационные. Заявки не отправляются.</span>
         </p>
       </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <a class="to-top" href="#top" aria-label="Наверх" title="Наверх">↑</a><script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/services.js">
     </script>
     <script src="js/app.js">
+    </script>
+    <script src="js/enhancements.js">
     </script>
   </body>
 </html>
