@@ -1,123 +1,410 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись.">
-    <title>
-      До и после — ХвостКом
-    </title>
-    <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <meta name="description" content="ХвостКом — груминг для собак и кошек. Услуги, бережный уход, подготовка к визиту и контакты салона.">
+    <meta name="theme-color" content="#fbf7ef">
+    <title>До и после — ХвостКом</title><link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="en/gallery.html">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/liquid-glass.css">
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main">
-      Перейти к содержимому
-    </a>
-    <header class="border-bottom bg-white">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html">
-            <img src="images/paw.svg" width="36" height="36" alt="">
-            ХвостКом
-            <span class="d-block small fw-normal brand-sub">
-              ГРУМИНГ И ЗАБОТА
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
-            <span class="navbar-toggler-icon">
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link "  href="index.html">
-                  Главная
-                </a>
+  <body id="top">
+    <a class="visually-hidden-focusable skip-link" href="#main">Перейти к содержимому</a>
+    <nav class="navbar navbar-expand-xl sticky-top site-nav" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="ХвостКом — главная"><img src="images/paw.svg" width="32" height="32" alt=""><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Услуги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О салоне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="gallery.html">До и после</a>
+            </li>
+          </ul>
+          <div class="search-box my-3 my-xl-0 ms-xl-3">
+            <label class="visually-hidden" for="siteSearch">
+              Поиск по сайту
+            </label>
+            <input id="siteSearch" class="form-control form-control-sm" type="search" placeholder="Поиск…" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+            <ul id="searchResults" class="search-results" hidden aria-label="Результаты поиска">
+            </ul>
+            <span id="searchStatus" class="visually-hidden" role="status"></span>
+          </div>
+          <a class="nav-link language-link ms-xl-3 py-2" id="languageSwitch" href="en/gallery.html" lang="en" hreflang="en" aria-label="English version">EN</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main" class="container py-5">
+      <header class="page-heading">
+        <p class="kicker">
+          ПРИМЕРЫ ГРУМИНГА
+        </p>
+        <h1>
+          До и после
+        </h1>
+        <p class="lead text-body-secondary mb-0">
+          Фотографии до и после стрижки, а также примеры ухода за шерстью.
+        </p>
+      </header>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">
+        <div class="col">
+          <figure class="card h-100">
+            <div class="gallery-image-frame">
+              <img src="images/grooming-shih-tzu.jpg" width="1564" height="1564" class="grooming-photo" loading="lazy" alt="Ши-тцу: до и после">
+            </div>
+            <figcaption class="card-body p-4">
+              <h2 class="h5">
+                Ши-тцу: до и после
+              </h2>
+              <p class="text-body-secondary">
+                Фотографии одного питомца до и после ухода.
+              </p>
+              <p class="photo-credit mb-0">
+                Фото: <a href="https://commons.wikimedia.org/wiki/File:Shihitzu.jpg" target="_blank" rel="noopener noreferrer">Peymanpetgrooming</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="card h-100">
+            <div class="gallery-image-frame">
+              <img src="images/grooming-poodle.jpg" width="1564" height="1564" class="grooming-photo" loading="lazy" alt="Пудель: до и после">
+            </div>
+            <figcaption class="card-body p-4">
+              <h2 class="h5">
+                Пудель: до и после
+              </h2>
+              <p class="text-body-secondary">
+                Как меняется образ после стрижки.
+              </p>
+              <p class="photo-credit mb-0">
+                Фото: <a href="https://commons.wikimedia.org/wiki/File:Poodle_style.jpg" target="_blank" rel="noopener noreferrer">Peymanpetgrooming</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="card h-100">
+            <div class="gallery-image-frame">
+              <img src="images/gallery-toby.jpg" width="1024" height="514" class="grooming-photo" loading="lazy" alt="Тоби: до и после">
+            </div>
+            <figcaption class="card-body p-4">
+              <h2 class="h5">
+                Тоби: до и после
+              </h2>
+              <p class="text-body-secondary">
+                Один питомец до и после стрижки.
+              </p>
+              <p class="photo-credit mb-0">
+                Фото: <a href="https://www.flickr.com/photos/sophiea/5574290609" target="_blank" rel="noopener noreferrer">sophiea</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="card h-100">
+            <div class="gallery-image-frame">
+              <img src="images/gallery-bella.jpg" width="4608" height="3456" class="grooming-photo" loading="lazy" alt="Белла после груминга">
+            </div>
+            <figcaption class="card-body p-4">
+              <h2 class="h5">
+                Белла после груминга
+              </h2>
+              <p class="text-body-secondary">
+                Миниатюрный серебристый пудель после первого визита к грумеру.
+              </p>
+              <p class="photo-credit mb-0">
+                Фото: <a href="https://commons.wikimedia.org/wiki/File:BELLA,_miniature_silver_poodle_(29012982568).jpg" target="_blank" rel="noopener noreferrer">Dorian Wallender</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 2.0</a>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="card h-100">
+            <div class="gallery-image-frame">
+              <img src="images/gallery-process-poodle.jpg" width="2592" height="1728" class="grooming-photo" loading="lazy" alt="Во время стрижки">
+            </div>
+            <figcaption class="card-body p-4">
+              <h2 class="h5">
+                Во время стрижки
+              </h2>
+              <p class="text-body-secondary">
+                Работа грумера со стандартным пуделем.
+              </p>
+              <p class="photo-credit mb-0">
+                Фото: <a href="https://commons.wikimedia.org/wiki/File:Grooming_Poodle.jpg" target="_blank" rel="noopener noreferrer">daveynin (David P. Fulmer)</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col">
+          <figure class="card h-100">
+            <div class="gallery-image-frame">
+              <img src="images/gallery-yorkshire.jpg" width="700" height="833" class="grooming-photo" loading="lazy" alt="Йоркширский терьер">
+            </div>
+            <figcaption class="card-body p-4">
+              <h2 class="h5">
+                Йоркширский терьер
+              </h2>
+              <p class="text-body-secondary">
+                Питомец на груминг-столе.
+              </p>
+              <p class="photo-credit mb-0">
+                Фото: <a href="https://commons.wikimedia.org/wiki/File:Yorkshire_Terrier_on_grooming_table.jpg" target="_blank" rel="noopener noreferrer">Masaharu takemori</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <a href="catalog.html" class="btn btn-primary mt-4">Выбрать уход →</a>
+    </main>
+    <footer class="site-footer container-fluid pt-5 pb-4">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a>
+            <p class="small text-body-secondary mt-3">
+              Груминг и забота о собаках и кошках. От первого знакомства до аккуратных лап.
+            </p>
+          </div>
+          <nav class="col-md-4" aria-label="Разделы сайта в подвале">
+            <h2 class="footer-title">
+              Разделы
+            </h2>
+            <ul class="list-unstyled footer-links footer-menu">
+              <li>
+                <a href="index.html">Главная</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="catalog.html">
-                  Услуги
-                </a>
+              <li>
+                <a href="catalog.html">Услуги</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="gallery.html">
-                  До и после
-                </a>
+              <li>
+                <a href="about.html">О салоне</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="contacts.html">
-                  О салоне
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="order.html">
-                  Запись
-                </a>
+              <li>
+                <a href="gallery.html">До и после</a>
               </li>
             </ul>
+          </nav>
+          <div class="col-md-4 footer-contact-group">
+            <h2 class="footer-title">
+              Контакты
+            </h2>
+            <address class="footer-contact-row footer-contact footer-contact-address"><span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="contact-value"><a href="https://yandex.ru/maps/213/moscow/house/ulitsa_bozhenko_14k1/Z04YcgdmTE0CQFtvfXtyc3thYw%3D%3D/?ll=37.406585%2C55.732728&amp;z=17" target="_blank" rel="noopener noreferrer">Москва, ул. Боженко, д. 14, корп. 1, кв. 22</a></span></address>
+            <p class="footer-contact-row footer-contact footer-contact-phone">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 3 3 5-2 2c1.6 3.1 3.9 5.4 7 7l2-2 5 3c0 2-1 3-3 3C10 21 3 14 3 6c0-2 1-3 3-3Z"/></svg></span><span class="contact-value"><a href="tel:+79252328798">+7 (925) 232-87-98</a></span>
+            </p>
+            <p class="footer-contact-row small text-body-secondary footer-contact-hours">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="contact-value">Понедельник–суббота, 10:00–18:00<br>Воскресенье — выходной</span>
+            </p>
+            <p class="footer-contact-row footer-contact footer-contact-email">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><span class="contact-value"><a href="mailto:misha_stepanov_07@mail.ru">misha_stepanov_07@mail.ru</a></span>
+            </p>
+            <button type="button" class="btn booking-footer mt-3" data-booking-open data-bs-toggle="modal" data-bs-target="#bookingModal">Записаться</button>
           </div>
         </div>
-      </nav>
-    </header>
-    <main id="main" class="container my-5">
-      <p class="eyebrow">
-        КАК МЕНЯЕТСЯ ОБРАЗ
-      </p>
-      <h1 class="display-4">
-        До и после ухода
-      </h1>
-      <p class="lead">
-        Демонстрация страницы портфолио груминга.
-      </p>
-      <div class="alert alert-info" role="alert">
-        Это авторские учебные иллюстрации, а не фотографии работ салона. Перед реальной публикацией замените их согласованной парой фотографий одного питомца.
-      </div>
-      <div class="row g-4">
-        <figure class="col-12 col-md-6">
-          <img class="img-fluid rounded-4" src="images/before.svg" width="530" height="430" alt="Учебная иллюстрация собаки с длинной пушистой шерстью до ухода">
-          <figcaption class="mt-3">
-            <span class="badge text-bg-secondary">
-              До
-            </span>
-            Пушистая шерсть перед стрижкой
-          </figcaption>
-        </figure>
-        <figure class="col-12 col-md-6">
-          <img class="img-fluid rounded-4" src="images/dog.svg" width="530" height="430" alt="Учебная иллюстрация той же собаки с аккуратной шерстью и бантом после ухода">
-          <figcaption class="mt-3">
-            <span class="badge text-bg-success">
-              После
-            </span>
-            Аккуратный силуэт после ухода
-          </figcaption>
-        </figure>
-      </div>
-      <a class="btn btn-primary mt-3" href="order.html?service=groom">
-        Выбрать такой уход
-      </a>
-    </main>
-    <footer class="container-fluid border-top py-4 mt-5">
-      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-          <a class="fw-bold text-decoration-none" href="index.html">
-            ХвостКом
-          </a>
-          <p class="small text-body-secondary mb-0">
-            Забота начинается с мягких лап.
-          </p>
-        </div>
-        <p class="small text-body-secondary mb-0">
-          Учебный проект · КР №2
-          <br>
-          Цены и расписание демонстрационные. Заявки не отправляются.
+        <p class="footer-line mb-0">
+          © 2026 ХвостКом. Все права защищены.
         </p>
       </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header px-4">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images/paw.svg" width="32" height="32" alt="">
+              <h2 class="modal-title fs-4" id="bookingTitle">
+                Записать питомца
+              </h2>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body p-4">
+            <p class="text-body-secondary">
+              Выберите уход и удобное время, затем свяжитесь с нами для подтверждения визита.
+            </p>
+            <p class="small text-body-secondary">
+              * — обязательные поля. Пн–сб, 10:00–18:00. Воскресенье — выходной.
+            </p>
+            <form id="bookingForm" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="name" class="form-label">
+                    Ваше имя *
+                  </label>
+                  <input id="name" name="name" class="form-control" required maxlength="80" autocomplete="given-name">
+                  <div class="invalid-feedback">
+                    Введите имя.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label">
+                    E-mail *
+                  </label>
+                  <input id="email" name="email" type="email" class="form-control" required autocomplete="email">
+                  <div class="invalid-feedback">
+                    Проверьте e-mail.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="phone">
+                    Телефон *
+                  </label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">+7</span><input id="phone" name="phone" type="tel" class="form-control" inputmode="tel" pattern="[0-9 \(\)\-]{10,18}" placeholder="900 000-00-00" required aria-describedby="phoneHelp">
+                    <div class="invalid-feedback">
+                      Укажите 10 цифр без +7.
+                    </div>
+                  </div>
+                  <div class="form-text" id="phoneHelp">
+                    10 цифр, можно с пробелами и скобками.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="petName" class="form-label">
+                    Кличка питомца *
+                  </label>
+                  <input id="petName" name="petName" class="form-control" required maxlength="60">
+                  <div class="invalid-feedback">
+                    Введите кличку.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="petType" class="form-label">
+                    Питомец *
+                  </label>
+                  <select id="petType" name="petType" class="form-select" required>
+                    <option value="">
+                      Выберите питомца
+                    </option>
+                    <option value="dog">
+                      Собака
+                    </option>
+                    <option value="cat">
+                      Кошка
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Выберите питомца и подходящую ему услугу.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="service" class="form-label">
+                    Услуга *
+                  </label>
+                  <select id="service" name="service" class="form-select" required>
+                    <option value="">
+                      Выберите услугу
+                    </option>
+                    <option value="groom">
+                      Стрижка и уход — от 2 400 ₽
+                    </option>
+                    <option value="bath">
+                      Купание и вычёс — от 1 600 ₽
+                    </option>
+                    <option value="ears">
+                      Гигиенический уход — от 700 ₽
+                    </option>
+                    <option value="nails">
+                      Уход за когтями — от 400 ₽
+                    </option>
+                    <option value="deshed">
+                      Экспресс-линька — от 2 100 ₽
+                    </option>
+                    <option value="puppy">
+                      Первое знакомство — от 1 000 ₽
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Выберите услугу.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="date" class="form-label">
+                    Дата *
+                  </label>
+                  <input id="date" name="date" type="date" class="form-control" required>
+                  <div class="invalid-feedback">
+                    Выберите день с понедельника по субботу в ближайшие 90 дней.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="time" class="form-label">
+                    Время начала *
+                  </label>
+                  <select id="time" name="time" class="form-select" required>
+                    <option value="">
+                      Сначала выберите услугу и дату
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Выберите время из списка.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="comment" class="form-label">
+                    Особенности питомца
+                  </label>
+                  <textarea id="comment" name="comment" class="form-control" rows="3" maxlength="500" placeholder="Например: боится фена"></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input id="agree" name="agree" type="checkbox" class="form-check-input" required>
+                    <label for="agree" class="form-check-label">
+                      Согласен на обработку указанных данных *
+                    </label>
+                    <div class="invalid-feedback">
+                      Подтвердите согласие.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <p id="estimate" class="fw-bold" aria-live="polite">
+                  </p>
+                </div>
+                <div class="col-12 d-flex flex-wrap gap-2">
+                  <button type="submit" class="btn btn-primary" disabled id="submitBooking">Продолжить</button><button type="reset" class="btn btn-outline-primary">Очистить</button>
+                </div>
+              </div>
+            </form>
+            <section id="bookingResult" class="alert alert-success mt-4 d-none" tabindex="-1" aria-live="polite">
+              <h3 class="h5">
+                Детали визита готовы
+              </h3>
+              <p id="bookingSummary">
+              </p>
+              <p>
+                Свяжитесь с администратором, чтобы согласовать выбранное время.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-primary" href="tel:+79252328798">Позвонить в салон</a><a class="btn btn-outline-primary" href="mailto:misha_stepanov_07@mail.ru">Написать нам</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="to-top" href="#top" aria-label="Наверх" title="Наверх"><img src="images/paw.svg" width="32" height="32" alt=""></a><script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/services.js">
     </script>
     <script src="js/app.js">
+    </script>
+    <script src="js/enhancements.js">
     </script>
   </body>
 </html>

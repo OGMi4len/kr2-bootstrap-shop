@@ -1,114 +1,95 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Учебный сайт ХвостКом: груминг собак и кошек, услуги и демонстрационная запись.">
-    <title>
-      Об услуге — ХвостКом
-    </title>
-    <link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <meta name="description" content="ХвостКом — груминг для собак и кошек. Услуги, бережный уход, подготовка к визиту и контакты салона.">
+    <meta name="theme-color" content="#fbf7ef">
+    <title>Об услуге — ХвостКом</title><link rel="icon" href="images/paw.svg" type="image/svg+xml">
+    <link rel="alternate" hreflang="en" href="en/product.html">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/liquid-glass.css">
   </head>
-  <body>
-    <a class="visually-hidden-focusable skip-link" href="#main">
-      Перейти к содержимому
-    </a>
-    <header class="border-bottom bg-white">
-      <nav class="navbar navbar-expand-lg py-3" aria-label="Основная навигация">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html">
-            <img src="images/paw.svg" width="36" height="36" alt="">
-            ХвостКом
-            <span class="d-block small fw-normal brand-sub">
-              ГРУМИНГ И ЗАБОТА
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
-            <span class="navbar-toggler-icon">
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-              <li class="nav-item">
-                <a class="nav-link "  href="index.html">
-                  Главная
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="catalog.html">
-                  Услуги
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="gallery.html">
-                  До и после
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="contacts.html">
-                  О салоне
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="order.html">
-                  Запись
-                </a>
-              </li>
+  <body id="top">
+    <a class="visually-hidden-focusable skip-link" href="#main">Перейти к содержимому</a>
+    <nav class="navbar navbar-expand-xl sticky-top site-nav" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" aria-label="ХвостКом — главная"><img src="images/paw.svg" width="32" height="32" alt=""><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-xl-center">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="catalog.html">Услуги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">О салоне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts.html">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gallery.html">До и после</a>
+            </li>
+          </ul>
+          <div class="search-box my-3 my-xl-0 ms-xl-3">
+            <label class="visually-hidden" for="siteSearch">
+              Поиск по сайту
+            </label>
+            <input id="siteSearch" class="form-control form-control-sm" type="search" placeholder="Поиск…" autocomplete="off" aria-controls="searchResults" aria-expanded="false">
+            <ul id="searchResults" class="search-results" hidden aria-label="Результаты поиска">
             </ul>
+            <span id="searchStatus" class="visually-hidden" role="status"></span>
           </div>
+          <a class="nav-link language-link ms-xl-3 py-2" id="languageSwitch" href="en/product.html" lang="en" hreflang="en" aria-label="English version">EN</a>
         </div>
-      </nav>
-    </header>
-    <main id="main" class="container my-5">
+      </div>
+    </nav>
+    <main id="main" class="container py-5">
       <nav aria-label="Хлебные крошки">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="index.html">
-              Главная
-            </a>
+            <a href="index.html">Главная</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="catalog.html">
-              Услуги
-            </a>
+            <a href="catalog.html">Услуги</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
             Об услуге
           </li>
         </ol>
       </nav>
-      <div class="row gx-4 gy-5 align-items-center">
-        <div class="col-12 col-lg-6">
-          <img id="serviceImage" src="images/dog.svg" class="img-fluid rounded-4" width="530" height="430" alt="Иллюстрация собаки">
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-5">
+          <img id="serviceImage" src="images/dog.svg" width="530" height="430" class="img-fluid service-illustration" alt="Иллюстрация собаки">
         </div>
-        <section class="col-12 col-lg-6">
-          <span id="serviceBadge" class="badge text-bg-success mb-3">
-            Для собак
-          </span>
-          <h1 id="serviceTitle" class="display-4">
+        <section class="col-lg-7">
+          <p class="kicker">
+            ПОДРОБНЕЕ ОБ УХОДЕ
+          </p>
+          <span class="badge tag mb-3" id="serviceBadge">Для собак</span>
+          <h1 id="serviceTitle">
             Стрижка и уход
           </h1>
-          <p id="serviceDescription" class="lead">
-            Аккуратная стрижка, купание и сушка. Подбираем форму с учётом шерсти.
+          <p id="serviceDescription" class="lead text-body-secondary">
+            Купание, сушка и аккуратная стрижка с учётом типа шерсти.
           </p>
-          <p id="servicePrice" class="fs-3 fw-bold">
+          <p class="price-label" id="servicePrice">
             от 2 400 ₽
           </p>
-          <a id="serviceOrder" href="order.html?service=groom" class="btn btn-primary btn-lg">
-            Записать питомца
-          </a>
+          <a id="serviceOrder" href="#bookingModal" class="btn btn-primary" data-booking-open data-bs-toggle="modal" data-bs-target="#bookingModal" data-service="groom">Записать питомца →</a>
         </section>
       </div>
-      <section class="my-5">
-        <h2 class="h3 mb-3">
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
           Что входит в уход
         </h2>
         <div class="table-responsive">
-          <table class="table table-striped table-bordered align-middle">
+          <table class="table table-bordered align-middle">
             <caption>
-              Демонстрационные параметры выбранной услуги
+              Предварительные параметры услуги
             </caption>
             <thead>
               <tr>
@@ -126,7 +107,7 @@
                   Этапы
                 </th>
                 <td id="serviceSteps">
-                  Знакомство, купание, сушка, стрижка
+                  Знакомство → купание → сушка → стрижка
                 </td>
               </tr>
               <tr>
@@ -142,80 +123,286 @@
                   Кому подходит
                 </th>
                 <td id="servicePet">
-                  Собакам
+                  Для собак
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="alert alert-warning" role="alert">
-          Груминг не заменяет ветеринарную помощь. При проблемах со здоровьем процедуру следует согласовать с ветеринаром.
-        </div>
       </section>
       <section>
-        <h2 class="h3 mb-3">
+        <h2 class="section-title mb-4">
           Перед визитом
         </h2>
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item">
             <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
-                Как подготовить питомца?
-              </button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq0" aria-controls="faq0" aria-expanded="false">Как подготовиться к визиту?</button>
+            </h3>
+            <div id="faq0" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Расскажите о привычках питомца и возьмите привычную переноску или поводок. Полный список — в памятке владельцу.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-controls="faq1" aria-expanded="false">Можно ли записать кошку?</button>
             </h3>
             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Перед визитом выгуляйте собаку. Сообщите об особенностях поведения и чувствительности к средствам.
+                Да. В каталоге есть четыре подходящие услуги: купание, гигиена, когти и экспресс-линька.
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                Можно ли записать кошку?
-              </button>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-controls="faq2" aria-expanded="false">Как подтвердить запись?</button>
             </h3>
             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Да, выберите купание и вычёс либо гигиенический уход. Стрижка в этом учебном каталоге предназначена для собак.
-              </div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                Подтверждает ли форма реальную запись?
-              </button>
-            </h3>
-            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-              <div class="accordion-body">
-                Нет. Сайт учебный: форма проверяет данные и показывает итог. Данные никуда не отправляются.
+                Выберите услугу и время в окне записи. Затем свяжитесь с администратором по телефону или почте, чтобы согласовать визит.
               </div>
             </div>
           </div>
         </div>
+        <a class="btn btn-outline-primary mt-4" href="guide.html">Перед визитом ↗</a>
       </section>
     </main>
-    <footer class="container-fluid border-top py-4 mt-5">
-      <div class="container d-flex flex-column flex-md-row justify-content-between gap-3">
-        <div>
-          <a class="fw-bold text-decoration-none" href="index.html">
-            ХвостКом
-          </a>
-          <p class="small text-body-secondary mb-0">
-            Забота начинается с мягких лап.
-          </p>
+    <footer class="site-footer container-fluid pt-5 pb-4">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
+            <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">ХвостКом<span class="brand-dot">.</span></span></a>
+            <p class="small text-body-secondary mt-3">
+              Груминг и забота о собаках и кошках. От первого знакомства до аккуратных лап.
+            </p>
+          </div>
+          <nav class="col-md-4" aria-label="Разделы сайта в подвале">
+            <h2 class="footer-title">
+              Разделы
+            </h2>
+            <ul class="list-unstyled footer-links footer-menu">
+              <li>
+                <a href="index.html">Главная</a>
+              </li>
+              <li>
+                <a href="catalog.html">Услуги</a>
+              </li>
+              <li>
+                <a href="about.html">О салоне</a>
+              </li>
+              <li>
+                <a href="gallery.html">До и после</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="col-md-4 footer-contact-group">
+            <h2 class="footer-title">
+              Контакты
+            </h2>
+            <address class="footer-contact-row footer-contact footer-contact-address"><span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="contact-value"><a href="https://yandex.ru/maps/213/moscow/house/ulitsa_bozhenko_14k1/Z04YcgdmTE0CQFtvfXtyc3thYw%3D%3D/?ll=37.406585%2C55.732728&amp;z=17" target="_blank" rel="noopener noreferrer">Москва, ул. Боженко, д. 14, корп. 1, кв. 22</a></span></address>
+            <p class="footer-contact-row footer-contact footer-contact-phone">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 3 3 5-2 2c1.6 3.1 3.9 5.4 7 7l2-2 5 3c0 2-1 3-3 3C10 21 3 14 3 6c0-2 1-3 3-3Z"/></svg></span><span class="contact-value"><a href="tel:+79252328798">+7 (925) 232-87-98</a></span>
+            </p>
+            <p class="footer-contact-row small text-body-secondary footer-contact-hours">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="contact-value">Понедельник–суббота, 10:00–18:00<br>Воскресенье — выходной</span>
+            </p>
+            <p class="footer-contact-row footer-contact footer-contact-email">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><span class="contact-value"><a href="mailto:misha_stepanov_07@mail.ru">misha_stepanov_07@mail.ru</a></span>
+            </p>
+            <button type="button" class="btn booking-footer mt-3" data-booking-open data-bs-toggle="modal" data-bs-target="#bookingModal">Записаться</button>
+          </div>
         </div>
-        <p class="small text-body-secondary mb-0">
-          Учебный проект · КР №2
-          <br>
-          Цены и расписание демонстрационные. Заявки не отправляются.
+        <p class="footer-line mb-0">
+          © 2026 ХвостКом. Все права защищены.
         </p>
       </div>
     </footer>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header px-4">
+            <div class="d-flex align-items-center gap-3">
+              <img src="images/paw.svg" width="32" height="32" alt="">
+              <h2 class="modal-title fs-4" id="bookingTitle">
+                Записать питомца
+              </h2>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body p-4">
+            <p class="text-body-secondary">
+              Выберите уход и удобное время, затем свяжитесь с нами для подтверждения визита.
+            </p>
+            <p class="small text-body-secondary">
+              * — обязательные поля. Пн–сб, 10:00–18:00. Воскресенье — выходной.
+            </p>
+            <form id="bookingForm" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="name" class="form-label">
+                    Ваше имя *
+                  </label>
+                  <input id="name" name="name" class="form-control" required maxlength="80" autocomplete="given-name">
+                  <div class="invalid-feedback">
+                    Введите имя.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label">
+                    E-mail *
+                  </label>
+                  <input id="email" name="email" type="email" class="form-control" required autocomplete="email">
+                  <div class="invalid-feedback">
+                    Проверьте e-mail.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="phone">
+                    Телефон *
+                  </label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">+7</span><input id="phone" name="phone" type="tel" class="form-control" inputmode="tel" pattern="[0-9 \(\)\-]{10,18}" placeholder="900 000-00-00" required aria-describedby="phoneHelp">
+                    <div class="invalid-feedback">
+                      Укажите 10 цифр без +7.
+                    </div>
+                  </div>
+                  <div class="form-text" id="phoneHelp">
+                    10 цифр, можно с пробелами и скобками.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="petName" class="form-label">
+                    Кличка питомца *
+                  </label>
+                  <input id="petName" name="petName" class="form-control" required maxlength="60">
+                  <div class="invalid-feedback">
+                    Введите кличку.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="petType" class="form-label">
+                    Питомец *
+                  </label>
+                  <select id="petType" name="petType" class="form-select" required>
+                    <option value="">
+                      Выберите питомца
+                    </option>
+                    <option value="dog">
+                      Собака
+                    </option>
+                    <option value="cat">
+                      Кошка
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Выберите питомца и подходящую ему услугу.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="service" class="form-label">
+                    Услуга *
+                  </label>
+                  <select id="service" name="service" class="form-select" required>
+                    <option value="">
+                      Выберите услугу
+                    </option>
+                    <option value="groom">
+                      Стрижка и уход — от 2 400 ₽
+                    </option>
+                    <option value="bath">
+                      Купание и вычёс — от 1 600 ₽
+                    </option>
+                    <option value="ears">
+                      Гигиенический уход — от 700 ₽
+                    </option>
+                    <option value="nails">
+                      Уход за когтями — от 400 ₽
+                    </option>
+                    <option value="deshed">
+                      Экспресс-линька — от 2 100 ₽
+                    </option>
+                    <option value="puppy">
+                      Первое знакомство — от 1 000 ₽
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Выберите услугу.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="date" class="form-label">
+                    Дата *
+                  </label>
+                  <input id="date" name="date" type="date" class="form-control" required>
+                  <div class="invalid-feedback">
+                    Выберите день с понедельника по субботу в ближайшие 90 дней.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="time" class="form-label">
+                    Время начала *
+                  </label>
+                  <select id="time" name="time" class="form-select" required>
+                    <option value="">
+                      Сначала выберите услугу и дату
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Выберите время из списка.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="comment" class="form-label">
+                    Особенности питомца
+                  </label>
+                  <textarea id="comment" name="comment" class="form-control" rows="3" maxlength="500" placeholder="Например: боится фена"></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input id="agree" name="agree" type="checkbox" class="form-check-input" required>
+                    <label for="agree" class="form-check-label">
+                      Согласен на обработку указанных данных *
+                    </label>
+                    <div class="invalid-feedback">
+                      Подтвердите согласие.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <p id="estimate" class="fw-bold" aria-live="polite">
+                  </p>
+                </div>
+                <div class="col-12 d-flex flex-wrap gap-2">
+                  <button type="submit" class="btn btn-primary" disabled id="submitBooking">Продолжить</button><button type="reset" class="btn btn-outline-primary">Очистить</button>
+                </div>
+              </div>
+            </form>
+            <section id="bookingResult" class="alert alert-success mt-4 d-none" tabindex="-1" aria-live="polite">
+              <h3 class="h5">
+                Детали визита готовы
+              </h3>
+              <p id="bookingSummary">
+              </p>
+              <p>
+                Свяжитесь с администратором, чтобы согласовать выбранное время.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-primary" href="tel:+79252328798">Позвонить в салон</a><a class="btn btn-outline-primary" href="mailto:misha_stepanov_07@mail.ru">Написать нам</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="to-top" href="#top" aria-label="Наверх" title="Наверх"><img src="images/paw.svg" width="32" height="32" alt=""></a><script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="js/services.js">
     </script>
     <script src="js/app.js">
+    </script>
+    <script src="js/enhancements.js">
     </script>
   </body>
 </html>
