@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="HvostKom — a student pet grooming website. Services for dogs and cats, care guide and demo booking.">
+    <meta name="description" content="HvostKom — thoughtful grooming for dogs and cats. Services, care, visit preparation and salon contacts.">
     <meta name="theme-color" content="#fbf7ef">
     <title>Service catalogue — HvostKom</title><link rel="icon" href="../images/paw.svg" type="image/svg+xml">
     <link rel="alternate" hreflang="ru" href="../catalog.html">
     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/liquid-glass.css">
   </head>
   <body id="top">
     <a class="visually-hidden-focusable skip-link" href="#main">Skip to content</a>
@@ -18,22 +19,19 @@
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto align-items-xl-center">
             <li class="nav-item">
-              <a class="nav-link "  href="index.html#about">About</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="catalog.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link "  href="guide.html">Guide</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link "  href="comparison.html">Compare</a>
+              <a class="nav-link" href="contacts.html">Contacts</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link "  href="changelog.html">Updates</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link "  href="order.html">Booking</a>
+              <a class="nav-link" href="gallery.html">Before & after</a>
             </li>
           </ul>
           <div class="search-box my-3 my-xl-0 ms-xl-3">
@@ -102,7 +100,7 @@
               </div>
             </div>
             <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
-              <a href="product.html?service=groom">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="groom">Choose →</button>
+              <a href="product.html?service=groom">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#bookingModal" data-booking-open data-service="groom">Choose →</button>
             </div>
           </article>
         </div>
@@ -123,7 +121,7 @@
               </div>
             </div>
             <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
-              <a href="product.html?service=bath">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="bath">Choose →</button>
+              <a href="product.html?service=bath">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#bookingModal" data-booking-open data-service="bath">Choose →</button>
             </div>
           </article>
         </div>
@@ -144,7 +142,7 @@
               </div>
             </div>
             <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
-              <a href="product.html?service=ears">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="ears">Choose →</button>
+              <a href="product.html?service=ears">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#bookingModal" data-booking-open data-service="ears">Choose →</button>
             </div>
           </article>
         </div>
@@ -165,7 +163,7 @@
               </div>
             </div>
             <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
-              <a href="product.html?service=nails">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="nails">Choose →</button>
+              <a href="product.html?service=nails">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#bookingModal" data-booking-open data-service="nails">Choose →</button>
             </div>
           </article>
         </div>
@@ -186,7 +184,7 @@
               </div>
             </div>
             <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
-              <a href="product.html?service=deshed">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="deshed">Choose →</button>
+              <a href="product.html?service=deshed">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#bookingModal" data-booking-open data-service="deshed">Choose →</button>
             </div>
           </article>
         </div>
@@ -207,7 +205,7 @@
               </div>
             </div>
             <div class="card-footer p-3 d-flex flex-wrap justify-content-between gap-2">
-              <a href="product.html?service=puppy">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#serviceModal" data-service="puppy">Choose →</button>
+              <a href="product.html?service=puppy">Details ↗</a><button type="button" class="service-select" data-bs-toggle="modal" data-bs-target="#bookingModal" data-booking-open data-service="puppy">Choose →</button>
             </div>
           </article>
         </div>
@@ -215,81 +213,236 @@
       <div class="alert alert-info mt-4">
         The description determines suitable pets, not the illustration. Four services are available for cats; haircut and first visit are for dogs.
       </div>
-      <a href="comparison.html" class="btn btn-outline-primary">Compare all services →</a>
+      <a href="catalog.html" class="btn btn-outline-primary">Compare all services →</a>
     </main>
-    <div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title fs-5" id="modalTitle">
-              Your choice
-            </h2>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p id="modalService">
-            </p>
-            <p class="small text-body-secondary">
-              The price is an estimate. You can review a demo booking on the next step.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Back</button><a id="modalOrder" href="order.html" class="btn btn-primary">Continue</a>
-          </div>
-        </div>
-      </div>
-    </div>
     <footer class="site-footer container-fluid pt-5 pb-4">
       <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-          <div class="col">
+        <div class="row g-4 mb-4">
+          <div class="col-md-4">
             <a class="text-decoration-none" href="index.html"><span class="wordmark wordmark-small">HvostKom<span class="brand-dot">.</span></span></a>
             <p class="small text-body-secondary mt-3">
-              Grooming and care for dogs and cats. We start with an introduction and choose a suitable service.
+              Grooming and care for dogs and cats. From the first hello to tidy paws.
             </p>
           </div>
-          <div class="col">
+          <nav class="col-md-4" aria-label="Footer site navigation">
             <h2 class="footer-title">
               Explore
             </h2>
-            <ul class="list-unstyled footer-links">
+            <ul class="list-unstyled footer-links footer-menu">
               <li>
-                <a href="catalog.html">Service catalogue</a>
+                <a href="index.html">Home</a>
               </li>
               <li>
-                <a href="guide.html">Owner’s guide</a>
+                <a href="catalog.html">Services</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
               </li>
               <li>
                 <a href="gallery.html">Before & after</a>
               </li>
-              <li>
-                <a href="contacts.html">About the salon</a>
-              </li>
             </ul>
-          </div>
-          <div class="col">
+          </nav>
+          <div class="col-md-4 footer-contact-group">
             <h2 class="footer-title">
-              Project
+              Contacts
             </h2>
-            <ul class="list-unstyled footer-links">
-              <li>
-                <a href="https://github.com/OGMi4len/kr2-bootstrap-shop">Source on GitHub ↗</a>
-              </li>
-              <li>
-                <a href="changelog.html">Change history</a>
-              </li>
-              <li>
-                <a href="comparison.html">Prices & duration</a>
-              </li>
-            </ul>
+            <address class="footer-contact-row footer-contact footer-contact-address"><span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="contact-value"><a href="https://yandex.ru/maps/213/moscow/house/ulitsa_bozhenko_14k1/Z04YcgdmTE0CQFtvfXtyc3thYw%3D%3D/?ll=37.406585%2C55.732728&amp;z=17" target="_blank" rel="noopener noreferrer">Moscow, Bozhenko St, 14, building 1, apartment 22</a></span></address>
+            <p class="footer-contact-row footer-contact footer-contact-phone">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="m6 3 3 5-2 2c1.6 3.1 3.9 5.4 7 7l2-2 5 3c0 2-1 3-3 3C10 21 3 14 3 6c0-2 1-3 3-3Z"/></svg></span><span class="contact-value"><a href="tel:+79252328798">+7 (925) 232-87-98</a></span>
+            </p>
+            <p class="footer-contact-row small text-body-secondary footer-contact-hours">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="contact-value">Monday–Saturday, 10:00–18:00<br>Closed on Sunday</span>
+            </p>
+            <p class="footer-contact-row footer-contact footer-contact-email">
+              <span class="contact-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><span class="contact-value"><a href="mailto:misha_stepanov_07@mail.ru">misha_stepanov_07@mail.ru</a></span>
+            </p>
+            <button type="button" class="btn booking-footer mt-3" data-booking-open data-bs-toggle="modal" data-bs-target="#bookingModal">Book a visit</button>
           </div>
         </div>
         <p class="footer-line mb-0">
-          © 2026 HVOSTKOM /// STUDENT PROJECT · COURSEWORK 2<br><span class="text-body-secondary">Prices and time slots are examples. No booking is sent.</span>
+          © 2026 HvostKom. All rights reserved.
         </p>
       </div>
     </footer>
-    <a class="to-top" href="#top" aria-label="Back to top" title="Back to top">↑</a><script src="../vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingTitle" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header px-4">
+            <div class="d-flex align-items-center gap-3">
+              <img src="../images/paw.svg" width="32" height="32" alt="">
+              <h2 class="modal-title fs-4" id="bookingTitle">
+                Book a visit
+              </h2>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <p class="text-body-secondary">
+              Choose care and a preferred time, then contact us to confirm your visit.
+            </p>
+            <p class="small text-body-secondary">
+              * Required fields. Mon–Sat, 10:00–18:00. Closed on Sunday.
+            </p>
+            <form id="bookingForm" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="name" class="form-label">
+                    Your name *
+                  </label>
+                  <input id="name" name="name" class="form-control" required maxlength="80" autocomplete="given-name">
+                  <div class="invalid-feedback">
+                    Enter your name.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label">
+                    E-mail *
+                  </label>
+                  <input id="email" name="email" type="email" class="form-control" required autocomplete="email">
+                  <div class="invalid-feedback">
+                    Enter a valid email.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="form-label" for="phone">
+                    Phone *
+                  </label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text">+7</span><input id="phone" name="phone" type="tel" class="form-control" inputmode="tel" pattern="[0-9 \(\)\-]{10,18}" placeholder="900 000-00-00" required aria-describedby="phoneHelp">
+                    <div class="invalid-feedback">
+                      Enter 10 digits without +7.
+                    </div>
+                  </div>
+                  <div class="form-text" id="phoneHelp">
+                    10 digits; spaces and brackets are allowed.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="petName" class="form-label">
+                    Pet’s name *
+                  </label>
+                  <input id="petName" name="petName" class="form-control" required maxlength="60">
+                  <div class="invalid-feedback">
+                    Enter your pet’s name.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="petType" class="form-label">
+                    Pet *
+                  </label>
+                  <select id="petType" name="petType" class="form-select" required>
+                    <option value="">
+                      Choose a pet
+                    </option>
+                    <option value="dog">
+                      Dog
+                    </option>
+                    <option value="cat">
+                      Cat
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Choose a pet and a compatible service.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="service" class="form-label">
+                    Service *
+                  </label>
+                  <select id="service" name="service" class="form-select" required>
+                    <option value="">
+                      Choose a service
+                    </option>
+                    <option value="groom">
+                      Grooming & haircut — from 2 400 ₽
+                    </option>
+                    <option value="bath">
+                      Bath & brush — from 1 600 ₽
+                    </option>
+                    <option value="ears">
+                      Hygiene care — from 700 ₽
+                    </option>
+                    <option value="nails">
+                      Nail trim — from 400 ₽
+                    </option>
+                    <option value="deshed">
+                      De-shedding — from 2 100 ₽
+                    </option>
+                    <option value="puppy">
+                      First visit — from 1 000 ₽
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Choose a service.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="date" class="form-label">
+                    Date *
+                  </label>
+                  <input id="date" name="date" type="date" class="form-control" required>
+                  <div class="invalid-feedback">
+                    Choose Monday–Saturday within the next 90 days.
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="time" class="form-label">
+                    Start time *
+                  </label>
+                  <select id="time" name="time" class="form-select" required>
+                    <option value="">
+                      Choose a service and date first
+                    </option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Choose a time from the list.
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="comment" class="form-label">
+                    Notes about your pet
+                  </label>
+                  <textarea id="comment" name="comment" class="form-control" rows="3" maxlength="500" placeholder="For example: dislikes the dryer"></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input id="agree" name="agree" type="checkbox" class="form-check-input" required>
+                    <label for="agree" class="form-check-label">
+                      I agree to processing of the details provided *
+                    </label>
+                    <div class="invalid-feedback">
+                      Confirm your consent.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <p id="estimate" class="fw-bold" aria-live="polite">
+                  </p>
+                </div>
+                <div class="col-12 d-flex flex-wrap gap-2">
+                  <button type="submit" class="btn btn-primary" disabled id="submitBooking">Continue</button><button type="reset" class="btn btn-outline-primary">Clear</button>
+                </div>
+              </div>
+            </form>
+            <section id="bookingResult" class="alert alert-success mt-4 d-none" tabindex="-1" aria-live="polite">
+              <h3 class="h5">
+                Your visit details are ready
+              </h3>
+              <p id="bookingSummary">
+              </p>
+              <p>
+                Contact the salon to agree on the selected time.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a class="btn btn-primary" href="tel:+79252328798">Call the salon</a><a class="btn btn-outline-primary" href="mailto:misha_stepanov_07@mail.ru">Email us</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="to-top" href="#top" aria-label="Back to top" title="Back to top"><img src="../images/paw.svg" width="32" height="32" alt=""></a><script src="../vendor/bootstrap/js/bootstrap.bundle.min.js">
     </script>
     <script src="../js/services.js">
     </script>

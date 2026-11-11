@@ -1,4 +1,4 @@
-/* Основной сценарий: каталог → услуга → учебная запись. Без сборки и сервера. */
+/* Основной сценарий: каталог → услуга → окно записи. Без сборки и сервера. */
 (() => {
   'use strict';
   const services = window.HV_SERVICES;
@@ -34,15 +34,6 @@
     filterCards();
   }
 
-  const modal = byId('serviceModal');
-  if (modal) modal.addEventListener('show.bs.modal', event => {
-    const id = event.relatedTarget?.dataset.service;
-    if (!Object.hasOwn(services, id)) return;
-    const item = services[id];
-    setText('modalService', `${item.title} · ${formatPrice(item)} · ${item.minutes} ${say('мин', 'min')}`);
-    byId('modalOrder').href = `order.html?service=${id}`;
-  });
-
   if (byId('serviceTitle')) {
     const item = services[selected];
     setText('serviceTitle', item.title);
@@ -53,11 +44,12 @@
     setText('serviceSteps', item.steps);
     setText('servicePet', petLabel(item));
     byId('serviceImage').src = `${asset}images/${item.image}.svg`;
-    byId('serviceImage').alt = say('Учебная иллюстрация для услуги: ', 'Example illustration for: ') + item.title;
-    byId('serviceOrder').href = `order.html?service=${selected}`;
+    byId('serviceImage').alt = say('Иллюстрация для услуги: ', 'Illustration for: ') + item.title;
+    byId('serviceOrder').dataset.service = selected;
     document.title = `${item.title} — ${say('ХвостКом', 'HvostKom')}`;
   }
 
+  const bookingModal = byId('bookingModal');
   const form = byId('bookingForm');
   if (!form) return;
   const service = byId('service');
@@ -71,6 +63,10 @@
     service.value = requested;
     if (!services[requested].pets.includes('cat')) pet.value = 'dog';
   }
+  const requestedPet = parameters.get('pet');
+  if (['dog', 'cat'].includes(requestedPet) && (!services[service.value] || services[service.value].pets.includes(requestedPet))) {
+    pet.value = requestedPet;
+  }
 
   function syncBooking() {
     const now = new Date();
@@ -81,13 +77,16 @@
     const item = services[service.value];
     pet.setCustomValidity(item && pet.value && !item.pets.includes(pet.value)
       ? say('Выберите услугу для этого питомца.', 'Choose a service suitable for this pet.') : '');
-    date.setCustomValidity(date.value && (date.value < date.min || date.value > date.max)
-      ? say('Дата вне учебного расписания.', 'The date is outside the example schedule.') : '');
+    const outsideRange = date.value && (date.value < date.min || date.value > date.max);
+    const sunday = date.value && new Date(`${date.value}T12:00:00`).getDay() === 0;
+    date.setCustomValidity(outsideRange
+      ? say('Дата вне расписания.', 'The date is outside the schedule.')
+      : sunday ? say('По воскресеньям салон закрыт.', 'The salon is closed on Sundays.') : '');
     const previousTime = time.value;
     time.replaceChildren(new Option(say('Выберите время', 'Choose a time'), ''));
     if (item && date.value && date.validity.valid) {
-      // Начала раз в полчаса, окончание не позднее 19:00.
-      for (let minute = 600; minute + item.minutes <= 1140; minute += 30) {
+      // Начала раз в полчаса, окончание не позднее 18:00.
+      for (let minute = 600; minute + item.minutes <= 1080; minute += 30) {
         if (date.value === localDate(now) && minute <= now.getHours() * 60 + now.getMinutes()) continue;
         const label = `${String(Math.floor(minute / 60)).padStart(2, '0')}:${String(minute % 60).padStart(2, '0')}`;
         time.add(new Option(label, label));
@@ -134,5 +133,23 @@
     form.querySelectorAll('input, select').forEach(field => field.setCustomValidity(''));
     setTimeout(syncBooking, 0);
   });
+  if (bookingModal) {
+    bookingModal.addEventListener('show.bs.modal', event => {
+      const trigger = event.relatedTarget;
+      const chosen = trigger?.dataset.service;
+      const chosenPet = trigger?.dataset.pet;
+      if (Object.hasOwn(services, chosen)) service.value = chosen;
+      if (['dog', 'cat'].includes(chosenPet)) pet.value = chosenPet;
+      else if (services[service.value] && !services[service.value].pets.includes(pet.value) && pet.value) pet.value = '';
+      if (services[service.value]?.pets.length === 1) pet.value = 'dog';
+      form.classList.remove('was-validated');
+      hideResult();
+      syncBooking();
+    });
+    bookingModal.addEventListener('shown.bs.modal', () => byId('name').focus());
+    if (parameters.get('booking') === '1' || location.hash === '#bookingModal') {
+      bootstrap.Modal.getOrCreateInstance(bookingModal).show();
+    }
+  }
   syncBooking();
 })();

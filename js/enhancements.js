@@ -15,14 +15,13 @@
     const index = [
       ['index.html', say('ХвостКом — главная', 'HvostKom — home'), say('салон груминг собака кошка преимущества уход', 'salon grooming dog cat benefits care')],
       ['catalog.html', say('Все услуги и цены', 'Services and prices'), say('каталог услуги фильтр собаки кошки', 'catalog services filter dogs cats')],
-      ['order.html', say('Запись на уход', 'Book a visit'), say('заявка дата время телефон запись бронирование', 'booking appointment date time phone')],
-      ['guide.html#prepare', say('Как подготовиться к визиту', 'Prepare for your visit'), say('памятка подготовка переноска поводок документы', 'guide checklist preparation carrier lead documents')],
-      ['guide.html#cats', say('Уход за кошками', 'Care for cats'), say('кошка кошки кот купание вычёс стресс', 'cat cats bathing brushing stress')],
+      ['#bookingModal', say('Запись на уход', 'Book a visit'), say('заявка дата время телефон запись бронирование', 'booking appointment date time phone')],
+      ['guide.html#prepare', say('Перед визитом', 'Before your visit'), say('подготовка памятка переноска поводок список перед визитом', 'before visit guide checklist preparation carrier lead')],
+      ['guide.html#cats', say('Что взять с собой', 'What to bring'), say('кошка собака переноска поводок привычные вещи', 'cat dog carrier lead familiar things')],
       ['guide.html#after', say('Уход после процедуры', 'Care after a procedure'), say('после визита шерсть расчёсывание рекомендации', 'after visit coat brushing recommendations')],
-      ['comparison.html', say('Сравнение процедур', 'Compare procedures'), say('сравнение стоимость цена длительность время график калькулятор', 'compare cost price duration time chart calculator')],
-      ['changelog.html', say('История изменений', 'Change history'), say('новое изменения версии обновления', 'new changes versions updates')],
-      ['gallery.html', say('До и после', 'Before and after'), say('галерея питомцы иллюстрации результат', 'gallery pets illustrations results')],
-      ['contacts.html', say('О салоне', 'About the salon'), say('салон контакты режим работы как проходит визит', 'salon contact opening hours visit process')]
+      ['gallery.html', say('До и после', 'Before and after'), say('галерея питомцы фотографии до после результат', 'gallery pets photos before after results')],
+      ['about.html', say('О салоне', 'About the salon'), say('салон подход знакомство уход как проходит визит', 'salon approach introduction care visit process')],
+      ['contacts.html', say('Контакты и график работы', 'Contact and opening hours'), say('телефон почта адрес Москва Боженко контакты график работы misha_stepanov_07@mail.ru 89252328798 79252328798', 'phone email address Moscow Bozhenko contacts opening hours misha_stepanov_07@mail.ru 89252328798 79252328798')]
     ];
     for (const [id, item] of Object.entries(services)) {
       const pets = item.pets?.includes('cat') ? say('кошка кошки кот', 'cat cats') : '';
@@ -74,6 +73,11 @@
         row.setAttribute('aria-selected', 'false');
         const link = document.createElement('a');
         link.href = url;
+        if (url === '#bookingModal') {
+          link.dataset.bsToggle = 'modal';
+          link.dataset.bsTarget = '#bookingModal';
+          link.dataset.bookingOpen = '';
+        }
         const heading = document.createElement('span');
         heading.className = 'search-title';
         heading.textContent = title;
@@ -149,13 +153,18 @@
       if (valid && item) {
         byId('calcPrice').textContent = say('от ', 'from ') + (item.price * count).toLocaleString(locale) + ' ₽';
         byId('calcTime').textContent = `${item.minutes * count} ${say('мин', 'min')}`;
-        order.href = `order.html?service=${encodeURIComponent(service.value)}`;
+        order.href = '#bookingModal';
+        order.dataset.bsToggle = 'modal';
+        order.dataset.bsTarget = '#bookingModal';
+        order.dataset.service = service.value;
+        order.dataset.pet = pet.value;
         order.removeAttribute('aria-disabled');
         order.removeAttribute('tabindex');
       } else {
         byId('calcPrice').textContent = say('Укажите 1–12 визитов', 'Choose 1–12 visits');
         byId('calcTime').textContent = '—';
         order.removeAttribute('href');
+        order.removeAttribute('data-bs-toggle');
         order.setAttribute('aria-disabled', 'true');
         order.tabIndex = -1;
       }
@@ -221,35 +230,6 @@
     reset.addEventListener('click', () => { stop(); current = -1; draw(); });
     window.addEventListener('pagehide', stop);
     draw();
-  }
-
-  // Легенда управляет целым рядом графика; подпись доступна и с клавиатуры.
-  document.querySelectorAll('[data-series]').forEach(button => {
-    button.addEventListener('click', () => {
-      const visible = button.getAttribute('aria-pressed') !== 'true';
-      button.setAttribute('aria-pressed', String(visible));
-      document.querySelectorAll('[data-chart-series]').forEach(series => {
-        if (series.dataset.chartSeries === button.dataset.series) {
-          series.style.display = visible ? '' : 'none';
-        }
-      });
-      if (byId('chartTooltip')) byId('chartTooltip').hidden = true;
-    });
-  });
-  const tooltip = byId('chartTooltip');
-  if (tooltip) {
-    document.querySelectorAll('[data-chart-label]').forEach(bar => {
-      const show = () => {
-        tooltip.textContent = bar.dataset.chartLabel;
-        tooltip.hidden = false;
-      };
-      const hide = () => { tooltip.hidden = true; };
-      bar.addEventListener('pointerenter', show);
-      bar.addEventListener('focus', show);
-      bar.addEventListener('pointerleave', hide);
-      bar.addEventListener('blur', hide);
-      bar.addEventListener('keydown', event => { if (event.key === 'Escape') hide(); });
-    });
   }
 
   const copyStatus = byId('copyStatus');
