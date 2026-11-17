@@ -40,11 +40,33 @@
   }
   if ($('themeToggle')) {
     themeLabel();
-    $('themeToggle').addEventListener('click', () => {
-      root.dataset.bsTheme = root.dataset.bsTheme === 'dark' ? 'light' : 'dark';
-      try { localStorage.setItem('hv-theme', root.dataset.bsTheme); } catch (_) {}
-      themeLabel();
-    });
+    let changingTheme = false;
+    function changeTheme(theme) {
+      if (changingTheme || theme === root.dataset.bsTheme) return;
+      const apply = () => {
+        root.dataset.bsTheme = theme;
+        try { localStorage.setItem('hv-theme', theme); } catch (_) {}
+        themeLabel();
+      };
+      if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) { apply(); return; }
+      changingTheme = true;
+      const cleanup = () => { root.classList.remove('theme-changing', 'theme-fallback'); changingTheme = false; };
+      root.classList.add('theme-changing');
+      // Снимки старого и нового оформления плавно сменяют друг друга, включая градиенты.
+      if (typeof document.startViewTransition === 'function') {
+        try {
+          const transition = document.startViewTransition(apply);
+          transition.ready.catch(() => {});
+          transition.finished.then(cleanup, cleanup);
+          return;
+        } catch (_) { /* Старый браузер использует переходы цветов ниже. */ }
+      }
+      root.classList.add('theme-fallback');
+      void root.offsetWidth;
+      apply();
+      window.setTimeout(cleanup, 550);
+    }
+    $('themeToggle').addEventListener('click', () => changeTheme(root.dataset.bsTheme === 'dark' ? 'light' : 'dark'));
     addEventListener('storage', e => { if (e.key === 'hv-theme' && ['light','dark'].includes(e.newValue)) { root.dataset.bsTheme = e.newValue; themeLabel(); } });
   }
 

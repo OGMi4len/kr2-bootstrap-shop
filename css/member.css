@@ -22,7 +22,22 @@
 .support-form input { min-width:0; }
 .support-form .btn { padding:8px 14px; }
 .support-links { padding:0 16px 14px; display:flex; gap:18px; font-size:.78rem; }
-.to-top { bottom:94px; right:26px; }
+/* Кнопка живёт в потоке подвала, в отдельной от чата колонке. */
+.footer-top-row { display:flex; justify-content:flex-end; padding-right:5.5rem; padding-bottom:1.5rem; }
+.site-footer .to-top { position:static; display:inline-flex; gap:.6rem; width:auto; height:auto; min-height:48px; padding:.6rem 1rem; z-index:auto; font-size:.85rem; line-height:1.3; text-decoration:none; flex-shrink:0; }
+.site-footer .to-top img { width:28px; height:28px; }
+html { scroll-behavior:smooth; }
+/* Плавное растворение всей страницы без движения текста и изображений. */
+html.theme-changing::view-transition-old(root),
+html.theme-changing::view-transition-new(root) { animation-duration:500ms; animation-timing-function:ease-in-out; }
+html.theme-changing::view-transition-group(root) { animation-duration:500ms; }
+html.theme-fallback body, html.theme-fallback body * { transition:background-color 500ms ease-in-out,color 500ms ease-in-out,border-color 500ms ease-in-out,box-shadow 500ms ease-in-out,fill 500ms ease-in-out !important; }
+#themeToggle svg { transition:transform 500ms ease-in-out; }
+[data-bs-theme="dark"] #themeToggle svg { transform:rotate(90deg); }
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  #themeToggle svg { transition:none; }
+}
 .member-shell { padding:40px 0 70px; }
 .member-heading { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; margin-bottom:30px; }
 .member-heading h1 { font-size:clamp(2.3rem,5vw,4rem); margin-bottom:12px; }
