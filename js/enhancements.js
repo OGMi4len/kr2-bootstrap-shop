@@ -20,6 +20,7 @@
       ['guide.html#cats', say('Что взять с собой', 'What to bring'), say('кошка собака переноска поводок привычные вещи', 'cat dog carrier lead familiar things')],
       ['guide.html#after', say('Уход после процедуры', 'Care after a procedure'), say('после визита шерсть расчёсывание рекомендации', 'after visit coat brushing recommendations')],
       ['gallery.html', say('До и после', 'Before and after'), say('галерея питомцы фотографии до после результат', 'gallery pets photos before after results')],
+      ['reviews.html', say('Отзывы', 'Reviews'), say('оценка впечатления звёзды мастер отзывы', 'ratings feedback stars visitor reviews')],
       ['about.html', say('О салоне', 'About the salon'), say('салон подход знакомство уход как проходит визит', 'salon approach introduction care visit process')],
       ['contacts.html', say('Контакты и график работы', 'Contact and opening hours'), say('телефон почта адрес Москва Боженко контакты график работы misha_stepanov_07@mail.ru 89252328798 79252328798', 'phone email address Moscow Bozhenko contacts opening hours misha_stepanov_07@mail.ru 89252328798 79252328798')]
     ];
